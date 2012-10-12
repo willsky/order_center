@@ -1,6 +1,6 @@
 ﻿var indexdata0 = 
 [
-    { text: '产品列表',url:"/admin/product/index"},
+    { text: '产品列表',url:"/admin/products/index"},
 ];
 
 
