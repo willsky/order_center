@@ -7,7 +7,6 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 
-
     /**
      * 用户登录验证
      * @name POST:/login
@@ -70,6 +69,16 @@ class UsersController extends AppController {
     public function admin_logout(){
         $this->Session->delete('User.Info');
         $this->redirect('/login');
+    }
+
+
+    /**
+     * 后面用户列表
+     * @name POST:/admin/users
+     * @author Will.Xu
+     **/
+    public function admin_index(){
+        
     }
 
 }
