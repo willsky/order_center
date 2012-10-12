@@ -31,26 +31,26 @@ App::uses('AppController', 'Controller');
  */
 class PagesController extends AppController {
 
-/**
- * Controller name
- *
- * @var string
- */
-	public $name = 'Pages';
+    /**
+     * Controller name
+     *
+     * @var string
+     */
+    public $name = 'Pages';
 
-/**
- * This controller does not use a model
- *
- * @var array
- */
-	public $uses = array();
+    /**
+     * This controller does not use a model
+     *
+     * @var array
+     */
+    public $uses = array();
 
-/**
- * Displays a view
- *
- * @param mixed What page to display
- * @return void
- */
+    /**
+     * Displays a view
+     *
+     * @param mixed What page to display
+     * @return void
+     */
     public function display() {
         phpinfo(); 
         exit;
@@ -61,7 +61,7 @@ class PagesController extends AppController {
      * @author Will.Xu
      **/
     public function admin_index(){
-		$this->layout = 'frame';
+        $this->layout = 'frame';
     }
 
     /**
