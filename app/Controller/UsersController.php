@@ -133,4 +133,32 @@ class UsersController extends AppController {
         $this->json($_data, $_code);
     }
 
+    /**
+     * 删除管理员
+     * @name POST:/admin/users/delete
+     * @author Will.Xu
+     **/
+    public function admin_delete(){
+        $_data = false;
+        $_code = 403;
+        
+        if ( $this->request->is('post') ) {
+            $_id = isset($this->request->data['id']) ? intval($this->request->data['id']) : 0;
+
+            do {
+                if ( $_id < 1) {
+                    $_code = 406;
+                    break;
+                }
+
+                if ($this->User->delete($_id)){
+                    $_code = 0;
+                    $_data = true;
+                } else {
+                    $_code = 601;
+                }
+            } while(0);
+        }
+        $this->json($_data, $_code);
+    }
 }

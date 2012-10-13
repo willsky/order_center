@@ -22,6 +22,7 @@ class Code {
             403 => __('Request deny'),
             404 => __('Not Found'),
             405 => __('Request method error'),
+            406 => __('Bad Request'),
             408 => __('Timeout'),
             500 => __('Server Error'),
             501 => __('Request method not support'),
