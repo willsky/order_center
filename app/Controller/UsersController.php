@@ -142,24 +142,34 @@ class UsersController extends AppController {
         $_data = false;
         $_code = 403;
         
-        if ( $this->request->is('post') ) {
-            $_id = isset($this->request->data['id']) ? intval($this->request->data['id']) : 0;
+		if ( $this->request->is('post') ) {
+			$_params = $this->params_filter(array('id'), $this->request->data);
 
-            do {
-                if ( $_id < 1) {
-                    $_code = 406;
-                    break;
-                }
+			do {
+				if ( !count($_params) ) {
+					$_code = 400;
+					break;
+				}
 
-                if ($this->User->delete($_id)){
-                    $_code = 0;
-                    $_data = true;
-                } else {
-                    $_code = 601;
-                }
-            } while(0);
-        }
-        $this->json($_data, $_code);
+				$_id = $_params['id'];
+				$_id = explode(',', $_id);
+				$_id = array_map('intval', $_id);
+
+				if ( !count($_id) ) {
+					$_code = 406;
+					break;
+				}
+
+				if ($this->User->deleteAll(array('User.id'=>$_id))){
+					$_code = 0;
+					$_data = true;
+				} else {
+					$_code = 601;
+				}
+			} while(0);
+		}
+
+		$this->json($_data, $_code);
     }
 
     /**

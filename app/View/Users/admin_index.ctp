@@ -66,7 +66,12 @@ $(function(){
     grid_table = manager = $("#maingrid").ligerGrid(_grid_init);
 
     $("#new_row").bind('click', function(){
-        user_win = $.ligerDialog.open({target:$("#user_form"), width:400, allowClose:true, title:'添加用户'});
+		if ( user_win ) {
+			var _username = $("#username").val('');
+			var _password = $("#password").val('');
+			user_win.show();
+		} else 
+			user_win = $.ligerDialog.open({target:$("#user_form"), width:400, allowClose:true, title:'添加用户'});
     });
 
     $("#del_row").bind('click', function(){
@@ -86,14 +91,23 @@ $(function(){
 
 			$.post("/admin/users/delete", {id:_id}, function(_data){
 				var _code = _data.code | 0;
+
+				if ( _code ) {
+					$.ligerDialog.error(_data.msg);
+				} else {
+					grid_table.loadData();
+				}
 				
-			}, 'data');
+			}, 'json');
 		}
     });
 
     $("#cancel").bind("click", function() {
-        if ( user_win ) user_win.close();
-        user_win = null;
+		if ( user_win ) {
+		   	user_win.hidden();
+//		   	user_win.close();
+//			user_win = null;
+		}
     });
 
     $("#ok").bind("click", function() {
@@ -110,7 +124,12 @@ $(function(){
 
         $.post('/admin/users/add', {username:_username, password:_password}, function(_data) {
             var _code = _data.code | 0;
-			if ( user_win ) user_win.close();
+
+			if ( user_win ) {
+				user_win.hidden();
+				//user_win.close();
+				//user_win = null;
+			}
 
             if ( _code ) {
                 $.ligerDialog.error(data.msg, '提示');
