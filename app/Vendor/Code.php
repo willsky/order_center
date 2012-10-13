@@ -26,6 +26,7 @@ class Code {
             500 => __('Server Error'),
             501 => __('Request method not support'),
             600 => __('Paramter value error'),
+            601 => __('Save fail'),
             1000 => __('Password error'),
             1001 => __('username is null'),
             1002 => __('password is null'),

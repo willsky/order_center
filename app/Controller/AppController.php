@@ -114,12 +114,16 @@ class AppController extends Controller {
      * 输入json格式数据
      * @param Array $data 输出的数据
      **/
-    protected function json($data=array(), $code = 0){
+    protected function json($data=array(), $code = 0, $append=array()){
         $this->autoLayout = false;
         $this->autoRender = false;
         App::uses('Code', 'Vendor');
         header('Content-Type: application/json');
         $_data = array('code' => $code, 'msg' => Code::msg($code), 'data' => $data);
+
+        if ( is_array($append) && count($append) )
+            $_data = array_merge($_data, $append);
+
         echo json_encode($_data);
         $this->response->send();
         exit;
@@ -157,6 +161,15 @@ class AppController extends Controller {
             return !$_ismiss;
         } else if ($_ismiss) {
             $this->json(false, 400);
+        }
+    }
+
+    public function beforeRender() {
+        //if (!intval(configure::read('debug')) && 'CakeError' == $this->name ) {
+        if ( 'CakeError' == $this->name ) {
+            if ( $this->request->is('ajax') ) {
+                $this->json(false, 500);
+            }
         }
     }
 }

@@ -14,6 +14,8 @@ class ProductsController extends AppController {
      * @author Will.Xu
      **/
     public function admin_index(){
-        
+        if ( $this->request->is('post') ) {
+            $this->json(Set::extract($this->paginate(), '{n}.Product'));
+        } 
     }
 }

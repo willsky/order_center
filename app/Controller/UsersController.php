@@ -78,7 +78,59 @@ class UsersController extends AppController {
      * @author Will.Xu
      **/
     public function admin_index(){
-        
+        if ( $this->request->is('post') ) {
+            $_params = $this->request->data;
+            $_sort = isset($_params['sort']) ? trim($_params['sort']) : 'id';
+            $_order = isset($_params['order']) ? trim(strtolower($_params['order'])) : 'desc';
+            $_sort_fields = array('id', 'name', 'operate_id', 'created', 'nickname');
+
+            if ( !in_array($_sort, $_sort_fields) ) $_sort = 'id';
+            if ( !in_array($_order, array('desc', 'asc')) ) $_order = 'desc';
+
+            $_paginate = $this->paginate;
+            $_paginate = array_merge($_paginate, array('sort'=>sprintf('User.%s %s',$_sort, $_order)));
+            $this->paginate = $_paginate;
+            $this->json(Set::extract($this->paginate(),'{n}.User'), 0, array('total'=>$this->User->find('count')));
+        } 
+    }
+
+    /**
+     * 更改管理员信息
+     * @name POST:/admin/users/update
+     * @author Will.Xu
+     **/
+    public function admin_update(){
+        $_data = false;
+        $_code = 403;
+
+        if ( $this->request->is('post') && $this->request->is("ajax") ) {
+            $_fields = array('field', 'value', 'id');
+            $_params = $this->params_filter($_fields, $this->params->data);
+            $this->params_verify($_fields, $_params );
+            $_code = 600;
+            $_id = intval($_params['id']);
+            $_field = trim($_params['field']);
+            $_value = trim($_params['value']);
+            $_update_fields = array('nickname');
+
+            do {
+                if ( $_id < 1) break;
+                if ( !in_array($_field, $_update_fields) ) break;
+                if ( strlen($_value) < 5 ) break; 
+
+                $_update_data = array('id'=>$_id, $_field=>$_value, 'operate'=>$this->user['name']);
+
+                if ($this->User->save($_update_data) ) {
+                    $_data = true;
+                    $_code = 0;
+                } else {
+                    $_code = 601;
+                }
+            } while(0);
+
+        }
+
+        $this->json($_data, $_code);
     }
 
 }
