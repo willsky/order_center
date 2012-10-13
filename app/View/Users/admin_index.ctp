@@ -66,11 +66,29 @@ $(function(){
     grid_table = manager = $("#maingrid").ligerGrid(_grid_init);
 
     $("#new_row").bind('click', function(){
-        var user_win = $.ligerDialog.open({target:$("#user_form"), width:400, allowClose:true, title:'添加用户'});
+        user_win = $.ligerDialog.open({target:$("#user_form"), width:400, allowClose:true, title:'添加用户'});
     });
 
     $("#del_row").bind('click', function(){
-        $.ligerDialog.warn('xx', 'Notice');
+		_rows = grid_table.getCheckedRows();
+		if ( _rows.length )
+		{
+			var _id = '';
+			
+			for(var i in _rows) {
+
+				if ( _id ) {
+					_id += ","+ _rows[i].id;
+				} else {
+					_id = _rows[i].id;
+				}
+			}
+
+			$.post("/admin/users/delete", {id:_id}, function(_data){
+				var _code = _data.code | 0;
+				
+			}, 'data');
+		}
     });
 
     $("#cancel").bind("click", function() {
@@ -92,6 +110,7 @@ $(function(){
 
         $.post('/admin/users/add', {username:_username, password:_password}, function(_data) {
             var _code = _data.code | 0;
+			if ( user_win ) user_win.close();
 
             if ( _code ) {
                 $.ligerDialog.error(data.msg, '提示');

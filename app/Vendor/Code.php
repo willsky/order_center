@@ -32,6 +32,7 @@ class Code {
             1001 => __('username is null'),
             1002 => __('password is null'),
             1003 => __('Account not exist'),
+            1004 => __('Account exist'),
         );
         return $_codes[$code];
     }

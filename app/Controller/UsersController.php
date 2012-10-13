@@ -82,7 +82,7 @@ class UsersController extends AppController {
             $_params = $this->request->data;
             $_sort = isset($_params['sort']) ? trim($_params['sort']) : 'id';
             $_order = isset($_params['order']) ? trim(strtolower($_params['order'])) : 'desc';
-            $_sort_fields = array('id', 'name', 'operate_id', 'created', 'nickname');
+            $_sort_fields = array('id', 'name', 'operate', 'created', 'nickname');
 
             if ( !in_array($_sort, $_sort_fields) ) $_sort = 'id';
             if ( !in_array($_order, array('desc', 'asc')) ) $_order = 'desc';
@@ -172,6 +172,41 @@ class UsersController extends AppController {
         $_data = false;
 
         if ( $this->request->is('post') ) {
+			$_params_fields = array('username', 'password');
+			$_params = $this->params_filter($_params_fields, $this->request->data);
+			$this->params_verify($_params_fields, $_params);
+			$_username = trim($_params['username']);
+			$_password = trim($_params['password']);
+
+			do {
+				$_code = 406;
+
+				if ( strlen($_username) < 4 ) break;
+
+				if ( !$_password ) break;
+
+				App::uses('Password', 'Vendor');
+				$_password = Password::getPassword($_password);
+
+				$_count = $this->User->find("count", array("conditions"=>array('User.name'=>$_username)));
+
+				if ( $_count ) {
+					$_code = 1004;
+					break;
+				}
+
+				$_post_data = array('name'=>$_username, 'nickname'=>$_username, 'password'=>$_password, 'operate'=>$this->user['name']);
+				$this->User->create();
+
+				if ($this->User->save($_post_data)) {
+					$_code = 0;
+					$_data = true;
+				} else {
+					$_code = 601;
+				}
+
+			} while(0);
+
         }
 
         $this->json($_data, $_code);
