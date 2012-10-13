@@ -161,4 +161,19 @@ class UsersController extends AppController {
         }
         $this->json($_data, $_code);
     }
+
+    /**
+     * 添加管理员 
+     * @name POST:/admin/users/add
+     * @author Will.Xu
+     **/
+    public function admin_add() {
+        $_code = 403;
+        $_data = false;
+
+        if ( $this->request->is('post') ) {
+        }
+
+        $this->json($_data, $_code);
+    }
 }
