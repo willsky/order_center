@@ -64,6 +64,8 @@ $(function(){
     };
 
     grid_table = manager = $("#maingrid").ligerGrid(_grid_init);
+    $("#username").ligerTextBox({nullText:'请输入用户名, 不能为空'});
+    $("#password").ligerTextBox({nullText:'请输入密码， 不能为空'});
 
     $("#new_row").bind('click', function(){
 		if ( user_win ) {
