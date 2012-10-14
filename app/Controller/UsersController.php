@@ -111,12 +111,29 @@ class UsersController extends AppController {
             $_id = intval($_params['id']);
             $_field = trim($_params['field']);
             $_value = trim($_params['value']);
-            $_update_fields = array('nickname');
+            $_update_fields = array('nickname', 'password');
 
             do {
                 if ( $_id < 1) break;
                 if ( !in_array($_field, $_update_fields) ) break;
+
+                if ( 'nickname' == $_field ) {
+                    if ( strlen($_value) < 5 ) break; 
+                } else if ( 'password' == $_field ) {
+                    if ( empty($_value) ) break; 
+
+                    App::uses('Password', 'Vendor');
+                    $_value = Password::getPassword($_value); 
+                }
+
+                switch($_field) {
+                case 'nickname':
                 if ( strlen($_value) < 5 ) break; 
+                    break;
+                case 'password':
+                    break;
+                }
+
 
                 $_update_data = array('id'=>$_id, $_field=>$_value, 'operate'=>$this->user['name']);
 
@@ -155,12 +172,20 @@ class UsersController extends AppController {
 				$_id = explode(',', $_id);
 				$_id = array_map('intval', $_id);
 
+                if ( in_array(1, $_id) && 1 == count($_id) ){
+					$_code = 1005;
+                    break;
+                }
+
+                $_id = array_diff($_id, array(1));
+
 				if ( !count($_id) ) {
 					$_code = 406;
 					break;
 				}
 
-				if ($this->User->deleteAll(array('User.id'=>$_id))){
+
+				if ($this->User->deleteAll(array('User.id'=>$_id, 'User.id > 1'))){
 					$_code = 0;
 					$_data = true;
 				} else {

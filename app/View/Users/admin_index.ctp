@@ -31,10 +31,10 @@ $(function(){
     _grid_init = {
         columns: [
             { display: '主键', name: 'id', width: 50, type: 'int',frozen:true },
-            { display: '名字', name: 'name', type: 'text', align:'left', minWidth:150, width:150},
-            { display: '昵称', name: 'nickname', type: 'text', isSort:false, minWidth:300, align:'left', editor:{type:'text'}},
-            { display: '操作人', name: 'operate', type: 'text', minWidth:50, width:50},
-            { display: '创建时间', name:'created', type: 'text', isSort: false, align:'center'}
+            { display: '名字', name: 'name', type: 'text', align:'center', minWidth:150, width:150},
+            { display: '昵称', name: 'nickname', type: 'text', isSort:false, minWidth:150, align:'center', editor:{type:'text'}},
+            { display: '操作人', name: 'operate', type: 'text', minWidth:100, align:'center'},
+            { display: '创建时间', name:'created', type: 'text', width:150, isSort: false, align:'center'}
             ],
             enabledEdit: true,  
             enabledSort: true,
@@ -136,11 +136,11 @@ $(function(){
 			}
 
             if ( _code ) {
-                $.ligerDialog.error(data.msg, '提示');
+                $.ligerDialog.error(_data.msg, '提示');
             } else {
                 grid_table.loadData();
             }
-        });
+        }, 'json');
     });
 });
 </script>

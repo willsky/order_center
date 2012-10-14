@@ -33,6 +33,7 @@ class Code {
             1002 => __('password is null'),
             1003 => __('Account not exist'),
             1004 => __('Account exist'),
+            1005 => __('Can Not Delete admin'),
         );
         return $_codes[$code];
     }
