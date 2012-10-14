@@ -116,10 +116,12 @@ $(function(){
 
         if ( _username.length < 5){
             $.ligerDialog.warn('用户名必须大于4个字符', '提示');
+            return false;
         }
 
         if ( _password.length < 1) {
             $.ligerDialog.warn('密码不能为空', '提示');
+            return false;
         }
 
         $.post('/admin/users/add', {username:_username, password:_password}, function(_data) {
