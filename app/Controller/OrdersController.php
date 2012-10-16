@@ -58,7 +58,6 @@ class OrdersController extends AppController {
      * @return void
      */
     public function admin_index() {
-        $this->layout = 'default';
         $this->Order->recursive = 0;
         $this->set('orders', $this->paginate());
     }
