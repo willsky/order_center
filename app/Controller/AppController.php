@@ -165,8 +165,7 @@ class AppController extends Controller {
     }
 
     public function beforeRender() {
-        //if (!intval(configure::read('debug')) && 'CakeError' == $this->name ) {
-        if ( 'CakeError' == $this->name ) {
+        if ( 'CakeError' == $this->name && !intval(Configure::read("debug")) ) {
             if ( $this->request->is('ajax') ) {
                 $this->json(false, 500);
             }

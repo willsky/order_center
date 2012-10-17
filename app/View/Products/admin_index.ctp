@@ -11,9 +11,9 @@ var manager, grid_table;
 $(function(){
     _grid_init = {
         columns: [
-            { display: '主键', name: 'id', width: 50, type: 'int',frozen:true },
-            { display: '名字', name: 'name', type: 'text', align:'left', minWidth:300, editor:{type:'text'}},
-            { display: '价格', name: 'actions', type: 'text', isSort: false, width:100, align:'left', editor:{type:'text'}},
+            { display: '主键', name: 'id', width: 50, type: 'int', isSort: true, frozen:true },
+            { display: '名字', name: 'product_name', type: 'text', align:'left', isSort: true, minWidth:300},
+            { display: '价格', name: 'price', type: 'text', isSort: false, width:100, align:'left'},
             ],
             enabledEdit: true,  
             enabledSort: true,
@@ -26,15 +26,12 @@ $(function(){
             method: 'post',
             pageSize: 20,
             height: '100%',
-            heightDiff:-50,
             pagesizeParmName: 'limit',
-            onAfterEdit: function(e){
-                var _id = e.record.id, _value = e.value, _field = e.column.columnname;
-
-                $.post('<?php echo $this->Html->url('/admin/products/update'); ?>', {id:_id, field:_field, value: _value}, function(_data){
-                    console.log(_data);
-                }, 'json');
-            }
+            root: 'data',
+            record: 'total',
+            sortnameParmName: 'sort',
+            sortorderParmName: 'order',
+            heightDiff:-50
     };
 
     grid_table = manager = $("#maingrid").ligerGrid(_grid_init);

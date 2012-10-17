@@ -1,8 +1,3 @@
-<div style="margin: 10px auto">
-	<a class="l-button" style="width:80px; float:left; margin-left:10px;" id="new_row">添加</a>
-	<a class="l-button" style="width:80px; float:left; margin-left:10px;" id="del_row">删除</a>
-</div>
-<div class="l-clear"></div>
 <div id="maingrid" style="margin: 10px;"></div>
 
 <div id='user_form' style="width:260px; height:120px; margin:35px 50px; display:none;"> 
