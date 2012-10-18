@@ -43,6 +43,19 @@ class OrdersController extends AppController {
             $this->sign_verify(array('product_id', 'source_ip'), $_params); 
 
             do {
+                $_need_fields = array('product_id', 'name', 'telephone', 'email', 'zip_code', 'address', 'source_pid');
+                $this->params_verify($_need_fields, $_params);
+                $_product_id = intval($_params['product_id']);
+                $_name = trim($_params['name']);
+                $_telphone = trim($_params['telephone']);
+                $_email = trim($_params['email']);
+                $_zip_code = trim($_params['zip_code']);
+                $_address = trim($_params['address']);
+                $_note = isset($_params['note']) ? trim($_params['note']) : '';
+                $_source_ip = trim($_params['source_ip']);
+                $_code = 400;
+                
+                if ( $_product_id < 1) break;
 
                 $_code = 0;
                 $_result = true;
