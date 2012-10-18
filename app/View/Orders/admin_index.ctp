@@ -25,20 +25,27 @@ var manager = null, grid_table = null, user_win= null;
 $(function(){
     _grid_init = {
         columns: [
-            { display: '主键', name: 'id', width: 50, type: 'int',frozen:true },
-            { display: '名字', name: 'name', type: 'text', align:'center', minWidth:150, width:150},
-            { display: '昵称', name: 'nickname', type: 'text', isSort:false, minWidth:150, align:'center', editor:{type:'text'}},
-            { display: '操作人', name: 'operate', type: 'text', minWidth:100, align:'center'},
-            { display: '创建时间', name:'created', type: 'text', width:150, isSort: false, align:'center'}
+            { display: '订单号', name: 'id', width: 50, type: 'int',frozen:true },
+            { display: '名字', name: 'product_name', type: 'text', align:'center', minWidth:150, width:150},
+            { display: '客户姓名', name: 'customer_realname', type: 'text', isSort:false, minWidth:150, align:'center'},
+            { display: '客户电话', name: 'customer_telephone', type: 'text', minWidth:100, align:'center'},
+            { display: '客户邮件', name: 'customer_email', type: 'text', isSort:false, minWidth:150, align:'center'},
+            { display: '客户邮编', name: 'customer_zip_code', type: 'text', isSort:false, minWidth:150, align:'center'},
+            { display: '客户地址', name: 'customer_address', type: 'text', isSort:false, minWidth:150, align:'center'},
+            { display: '订单状态', name: 'state', type: 'text', isSort:false, minWidth:150, align:'center'},
+            { display: '物流', name: 'transport', type: 'text', isSort:false, minWidth:150, align:'center'},
+            { display: '支付方式', name: 'payment', type: 'text', isSort:false, minWidth:150, align:'center'},
+            { display: '发货人', name: 'sender', type: 'text', isSort:false, minWidth:150, align:'center'},
+            { display: '创建时间', name: 'created', type: 'text', isSort:false, minWidth:150, align:'center'},
+            { display: '发货时间', name: 'updated', type: 'text', isSort:false, minWidth:150, align:'center'}
             ],
             enabledEdit: true,  
             enabledSort: true,
-            //clickToEdit: false,
             isScroll: true, 
             rownumbers:true,
             checkbox: true,
             dataAction: 'server',
-            url: '/admin/users',
+            url: '/admin/orders',
             method: 'post',
             pageSize: 20,
             height: '100%',
@@ -47,15 +54,7 @@ $(function(){
             record: 'total',
             sortnameParmName: 'sort',
             sortorderParmName: 'order',
-            heightDiff:-50,
-            onAfterEdit: function(e){
-                var _id = e.record.id, _value = e.value, _field = e.column.columnname;
-
-                $.post('<?php echo $this->Html->url('/admin/users/update'); ?>', {id:_id, field:_field, value: _value}, function(_data){
-                    var _code = _data.code | 0;
-                    if ( _code ) $.ligerDialog.warn(_data.msg, '提示');
-                }, 'json');
-            }
+            heightDiff:-50
     };
 
     grid_table = manager = $("#maingrid").ligerGrid(_grid_init);
