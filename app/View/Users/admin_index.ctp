@@ -1,9 +1,9 @@
-<div style="margin: 10px auto">
-	<a class="l-button" style="width:80px; float:left; margin-left:10px;" id="new_row">添加</a>
-	<a class="l-button" style="width:80px; float:left; margin-left:10px;" id="del_row">删除</a>
+<div>
+	<a class="l-button" style="width:80px; float:left; margin-right:10px;" id="new_row">添加</a>
+	<a class="l-button" style="width:80px; float:left;" id="del_row">删除</a>
 </div>
 <div class="l-clear"></div>
-<div id="maingrid" style="margin: 10px;"></div>
+<div id="maingrid" style="margin: 10px 0px;"></div>
 
 <div id='user_form' style="width:260px; height:120px; margin:35px 50px; display:none;"> 
     <div style="height:90px; width:260px; line-height: 45px;">
@@ -52,7 +52,6 @@ $(function(){
             record: 'total',
             sortnameParmName: 'sort',
             sortorderParmName: 'order',
-            heightDiff:-50,
             onAfterEdit: function(e){
                 var _id = e.record.id, _value = e.value, _field = e.column.columnname;
 

@@ -1,10 +1,9 @@
-<div style="margin: 10px auto">
-	<a class="l-button" style="width:80px; float:left; margin-left:10px;" id="new_row">添加</a>
-	<a class="l-button" style="width:80px; float:left; margin-left:10px;" id="del_row">删除</a>
+<div>
+	<a class="l-button" style="width:80px; float:left; margin-right:10px;" id="new_row">添加</a>
+	<a class="l-button" style="width:80px; float:left;" id="del_row">删除</a>
 </div>
 <div class="l-clear"></div>
-
-<div id="maingrid" style="margin: 10px;"></div>
+<div id="maingrid" style="margin: 10px 0px;"></div>
 <script type="text/javascript">
 var manager, grid_table;
 
@@ -30,8 +29,7 @@ $(function(){
             root: 'data',
             record: 'total',
             sortnameParmName: 'sort',
-            sortorderParmName: 'order',
-            heightDiff:-50
+            sortorderParmName: 'order'
     };
 
     grid_table = manager = $("#maingrid").ligerGrid(_grid_init);

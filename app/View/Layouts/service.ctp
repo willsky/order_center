@@ -33,16 +33,10 @@
 	echo $this->Html->script(array('lib/jquery/jquery-1.5.2.min', 'lib/ligerUI/js/ligerui.min')); 
 ?>
 </head>
-<body>
-	<div id="container">
-		<div id="header"></div>
-		<div id="content">
-			<?php //echo $this->Session->flash(); ?>
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer"></div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
+<body style="padding:10px;">
+    <?php //echo $this->Session->flash(); ?>
+    <?php echo $this->fetch('content'); ?>
+    <?php echo $this->element('sql_dump'); ?>
 </body>
 </html>
 <script type="text/javascript">
@@ -50,7 +44,6 @@
         var username = "<?php echo $this->Session->read('User.Info.name'); ?>";
 
         if (self != top && !username ) {
-            console.log("yes");
             top.location.reload();
         }
     });
