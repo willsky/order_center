@@ -67,7 +67,7 @@ class AppController extends Controller {
             if ( $this->request->is('ajax') ) {
                 $this->json(false, 401);
             } else {
-                $this->redirect('/login');
+                $this->redirect('/admin/login');
             }
         }
     }
@@ -168,6 +168,8 @@ class AppController extends Controller {
         if ( 'CakeError' == $this->name && !intval(Configure::read("debug")) ) {
             if ( $this->request->is('ajax') ) {
                 $this->json(false, 500);
+            } else {
+                $this->redirect("/error");
             }
         }
     }

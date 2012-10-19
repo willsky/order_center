@@ -32,7 +32,7 @@ class OrdersController extends AppController {
                 'name',
                 'telephone',
                 'email',
-                'zip_code',
+                'postal',
                 'address',
                 'note',
                 'source_ip',
@@ -43,22 +43,60 @@ class OrdersController extends AppController {
             $this->sign_verify(array('product_id', 'source_ip'), $_params); 
 
             do {
-                $_need_fields = array('product_id', 'name', 'telephone', 'email', 'zip_code', 'address', 'source_pid');
+                $_need_fields = array('product_id', 'name', 'telephone', 'email', 'postal', 'address', 'source_ip');
                 $this->params_verify($_need_fields, $_params);
                 $_product_id = intval($_params['product_id']);
                 $_name = trim($_params['name']);
-                $_telphone = trim($_params['telephone']);
+                $_telephone = trim($_params['telephone']);
                 $_email = trim($_params['email']);
-                $_zip_code = trim($_params['zip_code']);
+                $_postal = trim($_params['postal']);
                 $_address = trim($_params['address']);
                 $_note = isset($_params['note']) ? trim($_params['note']) : '';
                 $_source_ip = trim($_params['source_ip']);
-                $_code = 400;
+                $_code = 600;
+                App::uses('Validation', 'Utility');
                 
                 if ( $_product_id < 1) break;
 
-                $_code = 0;
-                $_result = true;
+                if ( !Validation::notEmpty($_name) ) break;
+
+                if ( !Validation::phone($_telephone) ) break;
+
+                if ( !Validation::email($_email) && !Validation::custom($_email, '/^[0-9]{5,11}$/') ) break;
+
+                if ( !Validation::postal($_postal, '/^[0-9]{6}$/') ) break;
+
+                if ( !Validation::notEmpty($_address) ) break;
+
+                if ( !Validation::ip($_source_ip) ) break;
+
+                $this->loadModel('Product');
+                $this->Product->id = $_product_id;
+                $_product_name = $this->Product->field('product_name');
+
+                if ( !$_product_name ) break;
+
+                $_order_data = array(
+                    'product_id' => $_product_id,
+                    'product_name' => $_product_name,
+                    'customer_realname' => $_name,
+                    'customer_telephone' => $_telephone,
+                    'customer_email' => $_email,
+                    'customer_postal' => $_postal,
+                    'customer_address' => $_address,
+                    'customer_note' => $_note,
+                    'customer_ip' => $_source_ip
+                );
+
+                $this->Order->create();
+
+                if ( $this->Order->save($_order_data) ) {
+                    $_code = 0;
+                    $_result = true;
+                } else {
+                    $_code = 601;
+                }
+
             } while(0);
         }
 

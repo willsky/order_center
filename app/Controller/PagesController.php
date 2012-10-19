@@ -51,10 +51,11 @@ class PagesController extends AppController {
      * @param mixed What page to display
      * @return void
      */
-    public function display() {
-        phpinfo(); 
-        exit;
-    }
+    public function display() {}
+
+    public function error() {}
+
+    public function index() {}
 
     /**
      * 管理后台首页

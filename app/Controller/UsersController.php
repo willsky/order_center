@@ -41,9 +41,9 @@ class UsersController extends AppController {
                 }
 
                 $_user_info = $_user_info['User'];
-                $_securt_password = $_user_info['password'];
+                $_secure_password = $_user_info['password'];
 
-                if ( Password::passwordVerify($_password, $_securt_password) )
+                if ( Password::passwordVerify($_password, $_secure_password) )
                 {
                     $_result = true;
                     unset($_user_info['password']);
@@ -68,7 +68,7 @@ class UsersController extends AppController {
      **/
     public function admin_logout(){
         $this->Session->delete('User.Info');
-        $this->redirect('/login');
+        $this->redirect('/admin/login');
     }
 
 

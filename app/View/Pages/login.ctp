@@ -37,7 +37,7 @@ $(function(){
             return false;
         }
 
-        $.post("/login", {username:_username, password:_password}, function(data){
+        $.post("/admin/login", {username:_username, password:_password}, function(data){
             var _code = data.code | 0;
 
             if ( 0 == _code ) {
