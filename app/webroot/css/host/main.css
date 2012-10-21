@@ -1,0 +1,37 @@
+body {
+    background-color: #005c32;
+    margin: 0px auto;
+    padding: 0px;
+    text-align: left;
+}
+
+.top_image {
+    height: 780px;
+    width: 1424px;
+    margin: 0px auto;
+    background-image: url(/img/host/top1.jpg);
+}
+
+.container {
+    margin: 0px auto;
+    width: 1000px;
+}
+
+.guide {
+    margin: 10px auto;
+    height: 60px;
+    width: 975px;
+    background-image: url(/img/host/guide_background.jpg);
+    background-repeat: repeat-x;
+}
+
+.guide ul {
+    padding: 10px;
+    margin: 0px;
+}
+
+.guide li {
+    margin:0px auto;
+    padding: auto 20px;
+    float: left;
+}
