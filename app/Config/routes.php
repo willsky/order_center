@@ -28,6 +28,7 @@
 
 Router::connect('/', array('controller' => 'pages', 'action' => 'index'));
 Router::connect('/error', array('controller' => 'pages', 'action' => 'error'));
+Router::connect('/order', array('controller' => 'orders', 'action' => 'order'));
 Router::connect('/admin', array('controller' => 'pages', 'action' => 'index', 'admin'=>1, '[method]'=>'GET'));
 Router::connect('/admin/login', array('controller' => 'pages', 'action' => 'login', '[method]'=>'GET'));
 Router::connect('/admin/login', array('controller' => 'users', 'action' => 'signIn', '[method]'=>'POST'));

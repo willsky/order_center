@@ -23,7 +23,7 @@ $(function(){
             enabledEdit: true,  
             enabledSort: true,
             rownumbers:true,
-            checkbox: true,
+            //checkbox: true,
             dataAction: 'server',
             url: '/admin/orders',
             method: 'post',

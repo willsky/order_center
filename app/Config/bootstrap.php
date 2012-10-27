@@ -182,6 +182,7 @@ CakeLog::config('error', array(
 
 // api密钥
 Configure::write('Server.secure', '7fe15975d00546037de2e02a66298abf');
+Configure::write('Server.order_api', 'http://dev.order.center.com/orders/add');
 
 // 密码混淆
 Configure::write('Password.salt', 'order_center');

@@ -17,8 +17,107 @@ class OrdersController extends AppController {
         $this->set('orders', $this->paginate());
     }
 
+    public function order() {
+        $_data = array();
+        $_code = 405;
+
+        if ( $this->request->is('post') && $this->request->is("ajax") ) {
+            $_fields = array(
+                'product_id',
+                'name',
+                'telephone',
+                'email',
+                'postal',
+                'address',
+                'note',
+            );
+
+            $_params = $this->params_filter($_fields, $this->request->data);
+
+            $_product_id = isset($_params['product_id']) ? intval($_params['product_id']) : 0;
+            $_name = isset($_params['name']) ? trim($_params['name']) : '';
+            $_telephone = isset($_params['telephone']) ? trim($_params['telephone']) : '';
+            $_email = isset($_params['email']) ? trim($_params['email']) : '';
+            $_postal = isset($_params['postal']) ? trim($_params['postal']) : '';
+            $_address = isset($_params['address']) ? trim($_params['address']) : '';
+            $_note = isset($_params['note']) ? trim($_params['note']) : '';
+
+            do {
+                if ( $_product_id < 1) {
+                    $_code = 20004;
+                    break;
+                }
+
+                if ( !$_address ) {
+                    $_code = 2005;
+                    break;
+                }
+
+                App::uses('Validation', 'Utility');
+
+                if ( !Validation::notEmpty($_name) ) {
+                    $_code = 2000;
+                    break;
+                }
+
+                if ( !Validation::phone($_telephone) ) {
+                    $_code = 2001;
+                    break;
+                }
+
+                if ( !Validation::email($_email) && !Validation::custom($_email, '/^[0-9]{5,11}$/') ) {
+                    $_code = 2002;
+                    break;
+                }
+
+                if ( !Validation::postal($_postal, '/^[0-9]{6}$/') ) {
+                    $_code = 2003;
+                    break;
+                }
+
+                $_source_ip = $this->request->clientIp();
+
+                $_key = Configure::read("Server.secure");
+                $_order_api = Configure::read('Server.order_api');
+                $_sign = strtolower(md5(sprintf("%s_%s_%s", $_product_id, $_source_ip, $_key)));
+
+                App::uses('HttpSocket', 'Network/Http');
+                $_post_data = array(
+                    'name' => $_name,
+                    'email' => $_email,
+                    'telephone' => $_telephone,
+                    'postal' => $_postal,
+                    'address' => $_address,
+                    'product_id' => $_product_id,
+                    'note' => $_note,
+                    'source_ip' => $_source_ip,
+                    'sign' => $_sign
+                );
+                $_client = new HttpSocket();
+                $_callback = $_client->post($_order_api, $_post_data);
+                 
+                if ( !$_callback ) {
+                    $_code = 408;
+                    break;
+                }
+
+                $_callback = json_decode($_callback->body(), true);
+                $_error_code = intval($_callback['code']);
+
+                if ( $_error_code ) {
+                    $_code = $_error_code;
+                    break;
+                }
+
+                $_code = 0;
+            } while(0);
+        } 
+
+        $this->json($_data, $_code);
+    }
+
     /**
-     * add method
+     * add method, web service
      *
      * @return void
      */

@@ -34,6 +34,12 @@ class Code {
             1003 => __('Account not exist'),
             1004 => __('Account exist'),
             1005 => __('Can Not Delete admin'),
+            2000 => __('Name can not empty'),
+            2001 => __('Telephone wrong'),
+            2002 => __('Email wrong'),
+            2003 => __('Postal wrong'),
+            2004 => __('Miss product id'),
+            2005 => __('Address wrong'),
         );
         return $_codes[$code];
     }

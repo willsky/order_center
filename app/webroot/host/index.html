@@ -4,6 +4,7 @@
     <title>三天成为主持人高手教程, 快速成为主持人教程,瞬间成为主持人</title>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <link href="/css/host/main.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/lib/jquery/jquery-1.5.2.min.js"></script>
   </head>
   <body>
     <div class="top_image"></div>
@@ -14,7 +15,7 @@
           <li>内容介绍</li> 
           <li>用户评论</li>
           <li>在线疑问</li>
-          <li>在线订购</li>
+          <li><a href="#order">在线订购</a></li>
         </ul>
       </div>
       <div class="raduis_header"></div>
@@ -98,7 +99,7 @@
       <div style="color:yellow; font-weight:900; font-size:36px; font-family: 微软雅黑,黑体; text-align:center; margin-top:20px;">货到付款&nbsp;&nbsp;全国免运费</div>
       <div class="raduis_header" style="background-image:none; margin-top:0px; height:20px;"></div>
       <div class="main_background" style="height:1052px; background-image:url(/img/host/order_background.jpg); background-position:center;">
-          <div style="background-color:#fff; padding-bottom:10px; margin: 540px 135px 20px;">
+          <div style="background-color:#fff; padding-bottom:10px; margin: 530px 135px 20px;" id="order">
               <div style="height:40px; line-height:40px; font-size:28px; font-family:微软雅黑,黑体;background-color:red; color:white; text-indent:20px; text-align:left;">
                   立刻填写收货信息(货到付款,三个月无效退款)
               </div>
@@ -106,36 +107,39 @@
                   <table style="width:100%; margin:20px auto;">
                       <tr style="margin:10px; font-size:12px;">
                           <td style="width:25%; height:25px; padding-right:10px; text-align:right;">您的姓名</td>
-                          <td style="padding-left:10px;"><input type="text" name="name" style="width:160px;" /><font color="red"> * 必填</font></td>
+                          <td style="padding-left:10px;"><input type="text" name="name" id="name" style="width:160px;" /><font color="red"> * 必填</font></td>
                       </tr>
                       <tr style="margin:10px; font-size:12px;">
-                          <td style="width:25%; height:25px; padding-right:10px; text-align:right;">您的电话</td>
-                          <td style="padding-left:10px;"><input type="text" name="telephone" style="width:160px;" /><font color="red"> * 必填</font></td>
+                          <td style="width:25%; height:25px; padding-right:10px; text-align:right;">手机号码</td>
+                          <td style="padding-left:10px;"><input type="text" name="telephone" id="telephone" style="width:160px;" /><font color="red"> * 必填</font></td>
                       </tr>
                       <tr style="margin:10px; font-size:12px;">
                           <td style="width:25%; height:25px; padding-right:10px; text-align:right;">您的邮件/QQ</td>
-                          <td style="padding-left:10px;"><input type="text" name="email" style="width:160px;" /><font color="red"> * 必填; 若没有填写"无",填写此项方便以后接受免费赠送的资料 </font></td>
+                          <td style="padding-left:10px;"><input type="text" name="email" id="email" style="width:160px;" /><font color="red"> * 必填; 若没有填写"无",填写此项方便以后接受免费赠送的资料 </font></td>
+                      </tr>
+                      <tr style="margin:10px; font-size:12px;">
+                          <td style="width:25%; height:25px; padding-right:10px; text-align:right;">邮政编码</td>
+                          <td style="padding-left:10px;"><input type="text" name="postal" id="postal" style="width:160px;" /></td>
                       </tr>
                       <tr style="margin:10px; font-size:12px;">
                           <td style="width:25%; height:25px; padding-right:10px; text-align:right;">收件地址</td>
-                          <td style="padding-left:10px;"><input type="text" name="address" style="width:275px;" /><font color="red"> * 必填; 地址务必详细，确保能收到寄件</font></td>
+                          <td style="padding-left:10px;"><input type="text" name="address" id="address" style="width:275px;" /><font color="red"> * 必填; 地址务必详细，确保能收到寄件</font></td>
                       </tr>
                       <tr style="margin:10px; font-size:12px;">
                           <td style="width:25%; height:25px; padding-right:10px; text-align:right;">产品名称</td>
                           <td style="padding-left:10px;">
-                              <select name="product_id" style="width:280px;">
+                              <select name="product_id" id="product_id" style="width:280px;">
                                   <option value="1">主持人培训教程大全 限时秒杀价280元</option>
                               </select> <font color="red"> * </font> 
                           </td>
                       </tr>
                       <tr style="margin:10px; font-size:12px;">
-                          <td style="width:25%; height:25px; padding-right:10px; text-align:right;">产品名称</td>
+                          <td style="width:25%; height:25px; padding-right:10px; text-align:right;">留言</td>
                           <td style="padding-left:10px;">
-                              <textarea name="note" style="width:380px; height:80px;">
-                              </textarea> 有什么建议请留言
+                              <textarea name="note" id="note" style="width:380px; height:80px;"></textarea> 有什么建议请留言
                           </td>
                       </tr>
-                      <tr><td colspan=2 style="text-align:center;"><input type="submit" value="现在订购" /></td></tr>
+                      <tr><td colspan=2 style="text-align:center;"><input type="button" id="to_order" name="to_order" value="现在订购" /></td></tr>
                   </table>
               </div>
           </div>
@@ -145,7 +149,7 @@
       <div style="color:yellow; font-weight:900; font-size:36px; font-family: 微软雅黑,黑体; text-align:center; margin-bottom:20px;">继续往下看!!!</div>
       <div class="raduis_header"></div>
       <div class="main_background">
-          <div class="content">
+          <div class="content" style="margin-bottom:20px;">
               <img src="/img/host/index_20.gif" style="height:31px; width:100%; margin:0px auto;" />
               <img src="/img/host/index_21.gif" style="height:97x; width:100%; margin:0px auto;" />
               <div style="text-indent:20px; font-size:15px; margin:0px 50px 20px; font-family:微软雅黑,黑体; font-weight:800;">
@@ -164,8 +168,214 @@
               <img src="/img/host/index_8a.png" style="width:100%; margin:0px auto;" />
               <img src="/img/host/index_8b.png" style="width:100%; margin:0px auto;" />
           </div>
+          <div class="content">
+              <img src="/img/host/index_30.gif" style="width:100%; margin:0px auto;" />
+              <div style="height:50px; font-size:36px; margin:10px auto; font-weight:900; color:#d40; text-indent:50px;">主持人培训教程大全 学到真本事 才是王道</div>
+              <img src="/img/host/index_31.gif" style="width:100%; margin:0px auto;" />
+              <img src="/img/host/index_32.gif" style="width:100%; margin:0px auto;" />
+              <img src="/img/host/index_33.gif" style="width:100%; margin:0px auto;" />
+              <img src="/img/host/index_34.gif" style="width:100%; margin:0px auto;" />
+              <img src="/img/host/index_35.gif" style="width:100%; margin:0px auto;" />
+              <img src="/img/host/index_36.gif" style="width:100%; margin:0px auto;" />
+          </div>
       </div>
       <div class="raduis_footer"></div>
+      <div style="color:yellow; font-weight:900; font-size:36px; margin:20px auto; font-family: 微软雅黑,黑体; text-align:center;">超多购买客户见证</div>
+      <div class="raduis_header"></div>
+      <div class="main_background">
+          <div class="content">
+              <div style="text-align:center; font-size:28px; font-weight:800; color:#c40;">
+                  这套主持人培训教程保证绝对100%有用,100%详细,100%易学
+              </div>
+              <div style="text-align:center; margin:20px auto; font-size:28px; font-weight:900; color:#f00;">
+                是不是真的？看看学过的朋友怎么说! 
+              </div>
+              <table style="width:100%; font-size:14px;">
+                  <tr>
+                      <td colspan=2 style="height:20px; text-align:center; border-bottom:2px solid green; color:red;">新婚新浪完全0基础，到月入过万</td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <img style="width:140px;" src="/img/host/customer/index_0.jpg" />
+                      </td>
+                      <td valign="top" style="height:100px; text-indent:20px;">
+                          <p>我今年8月份刚结婚，偶然发现婚庆司仪收入很高，靠嘴皮子过活，觉着人总得结婚吧，结婚就得找婚庆吧，所以这个职业永远能挣钱。所以下定决心学习司仪技能相关知识，在网上看到《主持人培训资料大全》就试着订购了一套，然而就是这样一个机会，却让我的人生出现了转折，有个好朋友要做婚礼答谢宴让我帮忙找婚庆公司司仪来主持，我觉得学到了教程里面实用的技术，主持一个答谢宴正好是练手之作，后来办的成功，自那开始做起了兼职婚礼司仪，一个月收入已经超过主业，现在想跟好朋友一起合伙发展婚庆事业。《主持人培训资料大全》不仅仅使我赢得了社区百姓的称赞，也使我的事业更上一层楼。</p>
+                          <p>——天津 王先生</p>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td colspan=2 style="height:20px; text-align:center; border-bottom:2px solid green; color:red;">转行婚庆司仪，事业突飞猛进</td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <img style="width:140px;" src="/img/host/customer/index_1.jpg" />
+                      </td>
+                      <td valign="top" style="height:100px; text-indent:20px;"> 
+                          <p>我是播音主持专业出身，上学的时候梦想是成为明星主持人，可是社会现实让我清楚的认识到自身的长处和短处，朋友结合他的专业优势，推荐我去从事婚庆主持人这一行业。我听从了朋友的建议，由于专业优势，进步很快，收入也越来越多，但发现遇到瓶颈，主持词都是重复讲来讲去，没有新意。还有单纯的司仪技能基础没打扎实，尤其是竞争越来越激烈的北京市场。于是在网上搜索相关方面的解决办法，《主持人培训资料大全》，看重王浩老师的丰富的资历经验，还有就是其中的业务接单技巧对自己会很有帮助，就接触了《主持人培训资料大全》，感觉自己的问题一下子解决了，日后的生活也比较轻松自如了</p>
+                          <p>——成都 李先生</p> 
+                      </td>
+                  </tr>
+                  <tr>
+                      <td colspan=2 style="height:20px; text-align:center; border-bottom:2px solid green; color:red;">小小23岁女收银员，结缘婚礼司仪</td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <img style="width:140px;" src="/img/host/customer/index_2.jpg" />
+                      </td>
+                      <td valign="top" style="height:100px; text-indent:20px;"> 
+                          <p>以前我是做收银员工作的。很偶然的机会发现做司仪很赚钱。主持一次600到1000元。但是我对婚礼主持非常不了解。觉得自己一点经验也没有，怕是根本做不好这个。但是当看到季明堂老师的司仪培训教程的时候非常的高兴。但同时我也有些怀疑，怀疑自己。怕自己学不会。也怀疑教程。怕没有那么神奇。可是后来仔细一想，上培训班还有好几千块钱，280元其实没有什么。所以抱着试试看的心态，买了《主持人培训资料大全》。当我第一次看这个教程的时候，我就知道我这钱没有白花。它让我进一步了解到了司仪这个行业。而且讲授内容详细、易懂。我受益匪浅</p>
+                          <p>——北京 小雪</p> 
+                      </td>
+                  </tr>
+                  <tr>
+                      <td colspan=2 style="height:20px; text-align:center; border-bottom:2px solid green; color:red;">大学生司仪创业，遭遇"桃花运"</td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <img style="width:140px;" src="/img/host/customer/index_3.jpg" />
+                      </td>
+                      <td valign="top" style="height:100px; text-indent:20px;"> 
+                          <p>我是在一个非常偶然的机会下进入了婚礼司仪这个行业当中，当初也是非常犹豫自己作为一个大学生是不是应该选择与自己专业不太相关的婚礼司仪这个行业，就在网络上搜索了一下资料，我突然发现婚礼司仪这个行业收入很高，而且进去似乎不用太多的条条框框，并且随着自己经验增加是个越老越吃香的职业。拿定主意之后，我就开始寻找有关婚礼司仪的培训课程，然后被我发现了《主持人培训资料大全》，在官网浏览资料之后，就抱着试试看的态度订购了《主持人培训资料大全》。…… 后来在一次婚庆主持活动中，认识了我现在的别一半，机缘巧合下，让我走了一回“桃花运”，呵呵...感谢《主持人培训资料大全》带给我的一切</p>
+                          <p>——湖南长沙 李先生</p> 
+                      </td>
+                  </tr>
+              </table>
+              <div style="text-align:center;  color:#f05;">
+                  <h2>无论你是否有主持经验,</h2>
+                  <h2>只要你按照这套教程进行学习,</h2>
+                  <h1>3天后你定会“脱胎换骨”，“步及佳镜”！</h1>
+                  <h1>保证学会！保证有效！无效退货!</h1>
+              </div>
+          </div>
+      </div>
+      <div class="raduis_footer"></div>
+      <div style="color:yellow; font-weight:900; font-size:36px; margin:20px auto; font-family: 微软雅黑,黑体; text-align:center;">您还在犹豫什么，马上订购吧！！<br/>超值豪礼在这里等着你!!!</div>
+      <div class="raduis_header"></div>
+      <div class="main_background">
+          <div class="content">
+              <div style="color:#b64; text-align:center; font-size:34px; font-weight:900;">订购2012权威《主持人培训教程大全》</div>
+              <img src="/img/host/index_40.gif" style="width:100%; margin:0px auto;" />
+              <div style="color:#555; font-size:18px; font-weight:600; margin: 15px 70px;">
+                  《主持人游戏宝典》内容为视频，也是王浩老师主讲，加上学员多人演示详细讲解，内容包含综艺类\婚礼类\晚会类\促销类\运动类\竞技类(6大类精选126个主持人常用互动游戏)
+              </div>
+              <div style="text-align:right; color:red; font-size:18px; font-weight:600; margin:0px 70px;">--互动游戏是主持人节目中的调味剂，不论男女老少都乐意参与的益智活动
+                  <hr style="border:0px; border-bottom:1px dashed #555;" />
+              </div>
+              <img src="/img/host/index_41.gif" style="width:100%; margin:0px auto;" />
+              <img src="/img/host/index_43.gif" style="width:100%; margin:0px auto;" />
+              <img src="/img/host/index_42.gif" style="width:100%; margin:0px auto;" />
+              <hr style="border:0px; border-bottom:1px dashed #555;margin:0px 70px;" />
+              <img src="/img/host/index_44.gif" style="width:100%; margin:0px auto;" />
+              <div style="text-align:center; color:red; font-size:18px; font-weight:700; margin:0px 70px;">
+                  <p>拥有超强记忆力也是作为一名优秀主持人的必备技能！</p>
+                  <p>这一系列课程内容都是正规的现场课程</p>
+                  <p>如同参加记忆大师特训班一样，让你接触到全球</p>
+                  <p>最前沿、最高效的记忆方法！</p>
+              </div>
+              <hr style="border:0px; border-bottom:1px dashed #555;margin:0px 70px;" />
+              <img src="/img/host/index_45.gif" style="width:100%; margin:0px auto;" />
+              <div style="text-align:center; color:red; font-size:18px; font-weight:700; margin:0px 70px;">
+                  <p>拥有超强记忆力也是作为一名优秀主持人的必备技能！</p>
+                  <p>这一系列课程内容都是正规的现场课程</p>
+                  <p>激发您强大的内心驱动力，练就非凡的自信口才……</p>
+                  <p>让更多的人喜欢你，让激情永远陪伴您……</p>
+                  <p>让您的业绩快速提升从而改变您的人生……</p>
+              </div>
+          </div>
+      </div>
+      <div class="raduis_footer"></div>
+      <div style="color:yellow; font-weight:900; font-size:36px; margin:20px auto; font-family: 微软雅黑,黑体; text-align:center;">您是否还有以下疑问？（常见问题）</div>
+      <div class="raduis_header"></div>
+      <div class="main_background">
+          <div class="content">
+            <dt style="font-size:18px;">
+                <dl style="color:red; margin:10px 40px;">一、订购资料后，要收快递费吗？
+                    <dd style="color: #444; padding:0px; margin:5px 0px 20px;">
+                    答： 全套技术资料，价格280元，我们包邮寄的，快递费由我方支付，您无须支付邮费。
+                    </dd>
+                </dl>
+                <dl style="color:red; margin:10px 40px;">二、怎么付费的?
+                    <dd style="color: #444; padding:0px; margin:5px 0px 20px;">
+                    答：分2种方式，可以货到付款(顺风和宅急送送到的地区都可以货到付款,货到了把资料款给快递就可以了)。2.需要你先付款(顺风和宅急送送不到的地区就无法货到付款,就需要你先付款,在用其他快递给你发货)。我们完全保障客户的利益，你无须担心付款后不发货。
+                    </dd>
+                </dl>
+                <dl style="color:red; margin:10px 40px;">三、光盘质量有保障吗?
+                    <dd style="color: #444; padding:0px; margin:5px 0px 20px;">
+答：我们采用优质DVD光盘刻录资料，所有光盘均经严格测试合格、方予发出。如有极个别客户由于电脑光驱的兼容性，无法读碟，我方付快递费，重新快递光盘。要求退款的给我帐号，马上把钱退还给你。
+                    </dd>
+                </dl>
+                <dl style="color:red; margin:10px 40px;">四、光盘多少天到达?
+                    <dd style="color: #444; padding:0px; margin:5px 0px 20px;">
+                    答：快递到达的时间，要看你所在地区的远近(发出地是山东济南)，一般2-3天(江浙沪,用顺风的航运发货,今天发货明天就可以到达)，偏远地区最多5天。我们都选用大型快递公司，如：顺风快递、宅急送、中国邮政EMS、申通、中通、圆通，而且不断筛选最好的快递公司。如快递公司特殊原因导致快件延迟到达，你随时告诉我们，我们会积极催促快递公司完成寄件。也希望客户能理解快递公司是第三方,我方毕竟无法掌控,给予理解。在此先谢谢啦！
+                    </dd>
+                </dl>
+                <dl style="color:red; margin:10px 40px;">五、视频清晰吗? 有文字搭配吗？
+                    <dd style="color: #444; padding:0px; margin:5px 0px 20px;">
+                    答：我们的资料是视频+文字，视频是DVD高清，保证足够清晰的，文字部分也刻录到光盘里了，确保你可以掌握！
+                    </dd>
+                </dl>
+                <dl style="color:red; margin:10px 40px;">六、买你们的资料有售后保障吗？
+                    <dd style="color: #444; padding:0px; margin:5px 0px 20px;">
+                    答：我们有专业的售后服务，在购买资料以后，如果有什么不明白的地方，随时跟我们联系，我们有专人为你讲解，直到你学会为止。
+                    </dd>
+                </dl>
+                <dl style="color:red; margin:10px 40px;">七、你们的资料是最新的吗？
+                    <dd style="color: #444; padding:0px; margin:5px 0px 20px;">
+                    答：我们的资料是不断更新的，（保证每月更新2-3项）所有老客户均可免费索取。确保您永远走在流行最前沿。
+                    </dd>
+                </dl>
+            <dt>
+          </div> 
+      </div>
+      <div class="raduis_footer"></div>
+      <div style="color:yellow; font-weight:900; font-size:36px; margin:20px auto; font-family: 微软雅黑,黑体; text-align:center;">
+          全国免运费 货到付款 30天内无条件退货！ 100%安全<br/>
+          免费咨询热线: <font color="red">400-692-8134</font>
+      </div>
+    </div>
+    <div style="margin:0px auto; width:100%; z-index:999; position:fixed; opacity:0.8; _bottom: auto; _width: 100%; _position: absolute;bottom:0px; text-align:center; height:59px;">
+        <a href="#order"><img src="/img/host/bottom.gif" /></a>
     </div>
   </body>
 </html>
+<script type="text/javascript">
+$(function(){
+    $("#to_order").bind("click", function(){
+        var _name = $("#name").val();
+        var _telephone = $("#telephone").val();
+        var _email = $("#email").val();
+        var _address = $("#address").val();
+        var _note= $("#note").val();
+        var _product_id = $("#product_id").val() | 0;
+        var _postal= $("#postal").val();
+
+        if ( !_name ) {
+            alert("请输入您的姓名");
+            return false;
+        }
+
+        if ( !_telephone ) {
+            alert("请输入你的电话号码");
+            return false;
+        }
+
+        if ( !_email ) {
+            alert('请输入你的邮件地址或QQ号');
+            return false;
+        }
+
+        if ( !_address ) {
+            alert("请输入您的地址");
+            return false;
+        }
+
+        $.post("/order", {name:_name, telephone:_telephone, email:_email, address:_address, note:_note, product_id:_product_id, postal:_postal}, function(data){
+                var _status = data.code | 0;            
+
+                if ( _status ) {
+                    alert(data.msg);
+                } else alert("恭喜你，成功订购，我们会尽快给你发货,请保持好手机畅通，谢谢惠顾, 欢迎下次光临!");
+            }, 'json'); 
+    });
+});
+</script>
