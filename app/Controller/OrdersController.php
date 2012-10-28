@@ -33,7 +33,6 @@ class OrdersController extends AppController {
             );
 
             $_params = $this->params_filter($_fields, $this->request->data);
-
             $_product_id = isset($_params['product_id']) ? intval($_params['product_id']) : 0;
             $_name = isset($_params['name']) ? trim($_params['name']) : '';
             $_telephone = isset($_params['telephone']) ? trim($_params['telephone']) : '';

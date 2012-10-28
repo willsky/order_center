@@ -12,7 +12,9 @@ img {border:0px;}
 
 .main {
     margin:0px auto;
+    padding: 0px;
     width: 920px;
+    background-color: #fff;
 }
 
 .top {
@@ -46,3 +48,5 @@ img {border:0px;}
 }
 
 .top_3 a {margin-left:5px; color:#fff;}
+
+.content { font-size:18px; font-weight:800; }
