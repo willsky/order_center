@@ -53,9 +53,17 @@ img {border:0px; width:100%;}
 .content { font-size:18px; font-weight:800; }
 
 .content ul { list-style:none; margin:0px 30px; padding:0px; }
-.content li { margin: 5px 10px; float:left; font-size:16px;}
+.content li { margin: 5px 15px; float:left; font-size:16px;}
 
 .clear_float { clear: both;}
+
+.margin_t30 { margin-top:30px;}
+
+.content p{font-weight:500; font-size:16px;}
+
+.content .p{font-size: 15px; margin:20px 50px; text-align:left; text-indent:40px;}
+
+.content .title { margin:20px auto;}
 
 
 .footer { height: 20px; width:100%;}
