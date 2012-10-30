@@ -54,16 +54,26 @@ img {border:0px; width:100%;}
 
 .content ul { list-style:none; margin:0px 30px; padding:0px; }
 .content li { margin: 5px 15px; float:left; font-size:16px;}
+.content ol li { font-size:15px; text-align:left; margin-left:200px; font-weight:500; float:none; }
 
 .clear_float { clear: both;}
 
 .margin_t30 { margin-top:30px;}
+.margin_b40 { margin-bottom:40px;}
 
 .content p{font-weight:500; font-size:16px;}
 
-.content .p{font-size: 15px; margin:20px 50px; text-align:left; text-indent:40px;}
+.content .case { margin:10px 180px; border:1px solid red;}
+.case img{ width:120px; height:160px; }
+
+.content .p{font-size: 15px; margin:20px 60px; text-align:left; text-indent:30px;}
 
 .content .title { margin:20px auto;}
 
+.normal {font-weight:500; }
 
 .footer { height: 20px; width:100%;}
+
+marquee{
+    width:100%; height: 422px; border-top: 2px solid red; border-bottom:2px solid red; margin: 50px auto;
+}
