@@ -5,6 +5,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <link href="/css/host/main.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="/js/lib/jquery/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="/js/image_layload.js"></script>
   </head>
   <body>
     <div class="top_image" id="1"></div>
@@ -379,6 +380,13 @@ $(function(){
                     top.location.reload();
                 }
             }, 'json'); 
+    });
+
+    $("img").lazyload({
+    placeholder: "images/grey.gif ", //加载图片前的占位图片
+    effect: "fadeIn", //加载图片使用的效果(淡入
+        failurelimit: 2,
+        threshold: 1
     });
 });
 </script>

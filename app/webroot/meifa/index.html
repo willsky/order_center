@@ -7,6 +7,7 @@
         <meta name="description" content="美发店快速赢利秘籍|美发视频|理发店名字|美发店转让|吹风造型|剪发技巧|发型师学习|美发技术|剪发教程|剪发基础|美发经营管理|学美发|发廊宣传单|发廊活动|发廊规章制度|理发技术|理发教程视频|美发|理发师|美发店装修图|沙宣剪发视频|理发教程|染发技巧|理发店效果图|美发店名字|发廊装修图片|烫发发型设计|烫发种类|托尼盖剪发视频|美发店宣传单|美发管理|美发店价目表|发廊管理|美发店管理制度|美发吹风造型|美发口才|最新美发视频|美发教学|最新剪发视频|发廊经营管理|发廊会员卡|发廊开业活动|理发店价目表|托尼盖技术|理发技巧|剪发视频|理发店|美发店活动方案|发廊|烫发视频|美发店装修|发廊名字|发廊装修|沙宣剪发|美发店经营|美发师学习|开理发店|吹风造型视频|染发技术|如何剪发|男士吹风造型|2012美发视频|美发烫发课程|发廊活动方案|理发店宣传单|理发店装修图|理发店管理|理发店管理制度" />
         <link rel="stylesheet" type="text/css" href='/css/meifa/index.css' />
         <script type="text/javascript" src="/js/lib/jquery/jquery-1.5.2.min.js"></script>
+        <script type="text/javascript" src="/js/image_layload.js"></script>
     </head>
     <body>
         <div class="main">
@@ -581,6 +582,14 @@ $(function(){
                     top.location.reload();
                 }
             }, 'json'); 
+    });
+
+
+    $("img").lazyload({
+    placeholder: "images/grey.gif ", //加载图片前的占位图片
+    effect: "fadeIn", //加载图片使用的效果(淡入
+        failurelimit: 2,
+        threshold: 1
     });
 });
 </script>
