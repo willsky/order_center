@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2012-11-15 21:25:32
+Date: 2012-11-15 21:28:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -75,7 +75,7 @@ CREATE TABLE `w_products` (
 INSERT INTO `w_products` VALUES ('1', '主持人培训教程大全', '298', '主持人培训教程大全 限时秒杀价280元');
 INSERT INTO `w_products` VALUES ('2', '美发店赢利秘笈', '398', '美发店赢利秘籍+发型设计软件+美发店活动方案 限时秒杀价 398元');
 INSERT INTO `w_products` VALUES ('3', '无基础开花店运营', '298', '无基础开花店运营方案升级版 尖叫价 298元');
-INSERT INTO `w_products` VALUES ('4', '', '298', '唱K速成视频');
+INSERT INTO `w_products` VALUES ('4', '唱K速成视频', '298', '唱K速成视频');
 
 -- ----------------------------
 -- Table structure for `w_users`
