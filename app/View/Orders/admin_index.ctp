@@ -3,6 +3,12 @@
 <script type="text/javascript">
 var manager = null, grid_table = null, user_win= null;
 
+function strftime( timestamp ) {
+    var data_obj = new Date(timestamp);
+    console.log(data_obj.getFullYear());
+    return data_obj.getFullYear();
+}
+
 $(function(){
     _grid_init = {
         columns: [

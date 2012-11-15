@@ -217,7 +217,7 @@ class OrdersController extends AppController {
             if ( !in_array($_order, array('desc', 'asc')) ) $_order = 'desc';
 
             $_paginate = $this->paginate;
-            $_paginate = array_merge($_paginate, array('sort'=>sprintf('Order.%s %s',$_sort, $_order)));
+            $_paginate = array_merge($_paginate, array('order'=>array(sprintf('Order.%s', $_sort) => $_order)));
             $this->paginate = $_paginate;
             $this->json(Set::extract($this->paginate(),'{n}.Order'), 0, array('total'=>$this->Order->find('count')));
         } 
