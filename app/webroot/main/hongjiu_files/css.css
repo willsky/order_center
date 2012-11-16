@@ -1,0 +1,435 @@
+UNKNOWN {
+	PADDING-BOTTOM: 0px; MARGIN: 0px auto; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+BODY {
+	TEXT-ALIGN: center; LINE-HEIGHT: 22px; FONT-FAMILY: "????"; COLOR: #706c6c; FONT-SIZE: 12px
+}
+DL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DD {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+OL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H1 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H2 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H3 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H4 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H5 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H6 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+PRE {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+FIELDSET {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+INPUT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+TEXTAREA {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+BLOCKQUOTE {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+P {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+IMG {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+INPUT {
+	BORDER-BOTTOM: #82a120 1px double; BORDER-LEFT: #82a120 1px double; BORDER-TOP: #82a120 1px double; BORDER-RIGHT: #82a120 1px double
+}
+TEXTAREA {
+	BORDER-BOTTOM: #82a120 1px double; BORDER-LEFT: #82a120 1px double; BORDER-TOP: #82a120 1px double; BORDER-RIGHT: #82a120 1px double
+}
+IMG {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-TOP-STYLE: none; BORDER-LEFT-STYLE: none
+}
+UL {
+	LIST-STYLE-TYPE: none
+}
+LI {
+	LIST-STYLE-TYPE: none
+}
+.cls {
+	CLEAR: both
+}
+.blank5 {
+	DISPLAY: block; HEIGHT: 5px; CLEAR: both; OVERFLOW: hidden
+}
+.blank10 {
+	DISPLAY: block; HEIGHT: 10px; CLEAR: both; OVERFLOW: hidden
+}
+.blank15 {
+	DISPLAY: block; HEIGHT: 15px; CLEAR: both; OVERFLOW: hidden
+}
+.blank20 {
+	DISPLAY: block; HEIGHT: 20px; CLEAR: both; OVERFLOW: hidden
+}
+.blank30 {
+	DISPLAY: block; HEIGHT: 30px; CLEAR: both; OVERFLOW: hidden
+}
+A:link {
+	COLOR: #6c6d71; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #6c6d71; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ef0004; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #ef0004; TEXT-DECORATION: none
+}
+#nav .a LI A:link {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+#nav .a LI A:visited {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+#nav .a LI A:hover {
+	COLOR: #ef0004; TEXT-DECORATION: none
+}
+#nav .a LI A:active {
+	COLOR: #ef0004; TEXT-DECORATION: none
+}
+.fwb12 {
+	FONT-FAMILY: '????'; COLOR: #fff; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.fgb14 {
+	FONT-FAMILY: '????'; COLOR: #3d7100; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.fbb {
+	FONT-FAMILY: '????'; COLOR: #5e5e5e; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.fob {
+	FONT-FAMILY: '????'; COLOR: #ce5916; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.flanb {
+	FONT-FAMILY: '????'; COLOR: #2986a5; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.fzhib {
+	FONT-FAMILY: '????'; COLOR: #754ea8; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.fg16 {
+	FONT-FAMILY: '????'; MARGIN-BOTTOM: 5px; COLOR: #3d7100; FONT-SIZE: 16px
+}
+.fb16 {
+	FONT-FAMILY: '????'; COLOR: #5e5e5e; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+.fbb16 {
+	FONT-FAMILY: '????'; COLOR: #5e5e5e; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+.fbb12 {
+	FONT-FAMILY: '????'; COLOR: #5e5e5e; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.colorO {
+	COLOR: #ce5916
+}
+.colorlan {
+	COLOR: #2986a5
+}
+.colorzhi {
+	COLOR: #754ea8
+}
+.colorred {
+	COLOR: #b20000
+}
+#header {
+	TEXT-ALIGN: left; WIDTH: 980px
+}
+#containe {
+	TEXT-ALIGN: left; WIDTH: 980px
+}
+#footer {
+	TEXT-ALIGN: left; WIDTH: 980px
+}
+#header {
+	HEIGHT: 73px !important
+}
+#logo {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 30px; PADDING-RIGHT: 0px; PADDING-TOP: 10px
+}
+#nav {
+	WIDTH: 672px; FLOAT: left; HEIGHT: 28px
+}
+#nav DIV {
+	FLOAT: left
+}
+.subnavbg1 {
+	BACKGROUND-IMAGE: url("../images/subnavbg1.jpg"/*tpa=http://www.320go.com/images/subnavbg1.jpg*/); WIDTH: 11px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 28px
+}
+.subnavbg4 {
+	BACKGROUND-IMAGE: url("../images/subnavbg4.jpg"/*tpa=http://www.320go.com/images/subnavbg4.jpg*/); WIDTH: 10px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 28px
+}
+.a {
+	BACKGROUND-IMAGE: url("../images/navbg.jpg"/*tpa=http://www.320go.com/images/navbg.jpg*/); WIDTH: 651px; BACKGROUND-REPEAT: repeat-x; HEIGHT: 28px
+}
+#nav LI {
+	BACKGROUND-IMAGE: url("../images/subnavbg3.jpg"/*tpa=http://www.320go.com/images/subnavbg3.jpg*/); TEXT-ALIGN: center; LINE-HEIGHT: 28px; WIDTH: 88px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 0px 3px; FLOAT: left; COLOR: #fff; FONT-WEIGHT: bold
+}
+.search {
+	TEXT-ALIGN: left; BACKGROUND-COLOR: #e0ecbc; WIDTH: 100%; HEIGHT: 30px
+}
+.inSearch {
+	MARGIN-TOP: 4px; WIDTH: 220px; HEIGHT: 20px; MARGIN-LEFT: 40px
+}
+.iImg {
+	BACKGROUND-IMAGE: url("../images/search.gif"/*tpa=http://www.320go.com/images/search.gif*/); BACKGROUND-REPEAT: no-repeat; PADDING-TOP: 2px
+}
+.ml {
+	WIDTH: 193px; FLOAT: left
+}
+.column {
+	BACKGROUND-IMAGE: url("../images/class.jpg"/*tpa=http://www.320go.com/images/class.jpg*/); WIDTH: 193px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 29px
+}
+.mlcon {
+	BORDER-BOTTOM: #d5d5d5 1px solid; BORDER-LEFT: #d5d5d5 1px solid; BORDER-TOP: #d5d5d5 1px; BORDER-RIGHT: #d5d5d5 1px solid
+}
+.mlcon P {
+	PADDING-LEFT: 20px
+}
+.fen {
+	BACKGROUND-IMAGE: url("../images/feng.jpg"/*tpa=http://www.320go.com/images/feng.jpg*/); TEXT-ALIGN: center; WIDTH: 187px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 5px
+}
+.price {
+	BORDER-BOTTOM: #d5d5d5 1px solid; BORDER-LEFT: #d5d5d5 1px solid; BORDER-TOP: #d5d5d5 1px solid; BORDER-RIGHT: #d5d5d5 1px solid
+}
+.price P {
+	PADDING-LEFT: 10px
+}
+.ptitle {
+	TEXT-ALIGN: center; BACKGROUND-COLOR: #f6f9f2; WIDTH: 193px; HEIGHT: 25px
+}
+.mm {
+	WIDTH: 545px; FLOAT: left; MARGIN-LEFT: 10px
+}
+.columnC {
+	BACKGROUND-IMAGE: url("../images/columnbg2.gif"/*tpa=http://www.320go.com/images/columnbg2.gif*/); PADDING-LEFT: 5px; BACKGROUND-REPEAT: repeat-x; HEIGHT: 24px
+}
+.pro {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; HEIGHT: 235px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.pro2r {
+	PADDING-BOTTOM: 5px; MARGIN: 15px 0px auto 36px; PADDING-LEFT: 10px; WIDTH: 123px; PADDING-RIGHT: 0px; FLOAT: left; HEIGHT: 205px; PADDING-TOP: 5px
+}
+.pro2r P {
+	TEXT-ALIGN: center; LINE-HEIGHT: 20px
+}
+.proborder {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.columnNew {
+	TEXT-ALIGN: center; HEIGHT: 25px
+}
+.columnNew LI {
+	BACKGROUND-COLOR: #eeeeee; WIDTH: 135px; FLOAT: left; HEIGHT: 25px; BORDER-RIGHT: #fff 1px solid
+}
+.pronew_left {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; WIDTH: 262px; PADDING-RIGHT: 0px; FLOAT: left; HEIGHT: 205px; PADDING-TOP: 10px
+}
+.pronew_right {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 0px; WIDTH: 262px; PADDING-RIGHT: 0px; FLOAT: right; HEIGHT: 205px; PADDING-TOP: 10px
+}
+.pronew_left_top {
+	HEIGHT: 102px
+}
+.pronew_left_top_left {
+	BORDER-BOTTOM: #ccc 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #ccc 1px solid; WIDTH: 100px; FLOAT: left; HEIGHT: 102px; OVERFLOW: hidden; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.pronew_left_top_right {
+	PADDING-LEFT: 5px; FLOAT: left; PADDING-TOP: 15px
+}
+.pronew_right_top {
+	HEIGHT: 102px
+}
+.pronew_right_top_left {
+	BORDER-BOTTOM: #ccc 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #ccc 1px solid; WIDTH: 100px; FLOAT: left; HEIGHT: 102px; OVERFLOW: hidden; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.pronew_right_top_right {
+	PADDING-LEFT: 5px; FLOAT: left; PADDING-TOP: 15px
+}
+.mr {
+	WIDTH: 223px; FLOAT: right
+}
+.right1 H2 {
+	TEXT-ALIGN: center; HEIGHT: 30px
+}
+.right1 .rightL {
+	WIDTH: 100px; FLOAT: left
+}
+.right1 .rightR {
+	WIDTH: 123px; FLOAT: right
+}
+.img30 {
+	BACKGROUND-IMAGE: url("../images/30t.jpg"/*tpa=http://www.320go.com/images/30t.jpg*/); TEXT-INDENT: 25px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 25px
+}
+.mian {
+	BACKGROUND-IMAGE: url("../images/mian.jpg"/*tpa=http://www.320go.com/images/mian.jpg*/); TEXT-INDENT: 25px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 25px
+}
+.bao {
+	BACKGROUND-IMAGE: url("../images/bao.jpg"/*tpa=http://www.320go.com/images/bao.jpg*/); TEXT-INDENT: 25px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 25px
+}
+.you {
+	BACKGROUND-IMAGE: url("../images/you.jpg"/*tpa=http://www.320go.com/images/you.jpg*/); TEXT-INDENT: 25px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 25px
+}
+.right2 H2 {
+	TEXT-ALIGN: center
+}
+.right2 LI {
+	BACKGROUND-IMAGE: url("../images/liDian.gif"/*tpa=http://www.320go.com/images/liDian.gif*/); PADDING-LEFT: 20px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 12px 8px
+}
+.right3 {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BACKGROUND-COLOR: #f2f6e7; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.right3 H2 {
+	TEXT-ALIGN: center
+}
+.right3 LI {
+	PADDING-LEFT: 30px; BACKGROUND-POSITION: 10px 3px; HEIGHT: 25px
+}
+.right3 .one {
+	BACKGROUND-IMAGE: url("../images/p1.jpg"/*tpa=http://www.320go.com/images/p1.jpg*/); BACKGROUND-REPEAT: no-repeat
+}
+.right3 .two {
+	BACKGROUND-IMAGE: url("../images/p2.jpg"/*tpa=http://www.320go.com/images/p2.jpg*/); BACKGROUND-REPEAT: no-repeat
+}
+.right3 .thr {
+	BACKGROUND-IMAGE: url("../images/p3.jpg"/*tpa=http://www.320go.com/images/p3.jpg*/); BACKGROUND-REPEAT: no-repeat
+}
+.right3 .for {
+	BACKGROUND-IMAGE: url("../images/p4.jpg"/*tpa=http://www.320go.com/images/p4.jpg*/); BACKGROUND-REPEAT: no-repeat
+}
+.right3 .fir {
+	BACKGROUND-IMAGE: url("../images/p5.jpg"/*tpa=http://www.320go.com/images/p5.jpg*/); BACKGROUND-REPEAT: no-repeat
+}
+.right3 .six {
+	BACKGROUND-IMAGE: url("../images/p6.jpg"/*tpa=http://www.320go.com/images/p6.jpg*/); BACKGROUND-REPEAT: no-repeat
+}
+.right3 .sev {
+	BACKGROUND-IMAGE: url("../images/p7.jpg"/*tpa=http://www.320go.com/images/p7.jpg*/); BACKGROUND-REPEAT: no-repeat
+}
+.right3 .eig {
+	BACKGROUND-IMAGE: url("../images/p8.jpg"/*tpa=http://www.320go.com/images/p8.jpg*/); BACKGROUND-REPEAT: no-repeat
+}
+.right3 .nie {
+	BACKGROUND-IMAGE: url("../images/p9.jpg"/*tpa=http://www.320go.com/images/p9.jpg*/); BACKGROUND-REPEAT: no-repeat
+}
+.right3 .ten {
+	BACKGROUND-IMAGE: url("../images/p10.jpg"/*tpa=http://www.320go.com/images/p10.jpg*/); BACKGROUND-REPEAT: no-repeat
+}
+.hot {
+	BACKGROUND-IMAGE: url("../images/hot.gif"/*tpa=http://www.320go.com/images/hot.gif*/); BACKGROUND-REPEAT: repeat-x; HEIGHT: 23px
+}
+.hot LI {
+	LINE-HEIGHT: 23px; FLOAT: left
+}
+.hot .hot_one {
+	PADDING-LEFT: 15px; WIDTH: 200px
+}
+.hot .hot_tow {
+	WIDTH: 490px
+}
+.hot .hot_thr {
+	WIDTH: 100px
+}
+.hotColumn {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.hotColumn .hot_left {
+	WIDTH: 250px; FLOAT: left
+}
+.hotColumn .hot_right {
+	WIDTH: 700px; FLOAT: right; MARGIN-LEFT: 10px
+}
+.hotColumn .hot_left .hot0 {
+	MARGIN-TOP: 20px
+}
+.hotColumn .hot_left .hot1 {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; MARGIN: 10px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.hotColumn .hot_left .hot1 .hot9 {
+	BACKGROUND-IMAGE: url("../images/hotpro9.gif"/*tpa=http://www.320go.com/images/hotpro9.gif*/); PADDING-LEFT: 10px; BACKGROUND-REPEAT: no-repeat
+}
+.hotColumn .hot_left .hot1 .hot10 {
+	BACKGROUND-IMAGE: url("../images/hotpro10.gif"/*tpa=http://www.320go.com/images/hotpro10.gif*/); BACKGROUND-REPEAT: repeat-x; HEIGHT: 2px
+}
+.hotColumn .hot_left .hot1 .hotpro1 {
+	MARGIN-TOP: 5px; WIDTH: 120px; MARGIN-LEFT: 55px
+}
+.hotColumn .hot_right .hotproL {
+	TEXT-ALIGN: center; MARGIN: 5px 0px 5px 10px; WIDTH: 150px; FLOAT: left
+}
+.foot1 {
+	BACKGROUND-IMAGE: url("../images/footer1.jpg"/*tpa=http://www.320go.com/images/footer1.jpg*/); WIDTH: 15px; BACKGROUND-REPEAT: no-repeat; FLOAT: left; HEIGHT: 128px
+}
+.foot2 {
+	BACKGROUND-IMAGE: url("../images/footer2.jpg"/*tpa=http://www.320go.com/images/footer2.jpg*/); WIDTH: 10px; BACKGROUND-REPEAT: no-repeat; FLOAT: right; HEIGHT: 128px
+}
+.foot3 {
+	BACKGROUND-IMAGE: url("../images/footer3.jpg"/*tpa=http://www.320go.com/images/footer3.jpg*/); WIDTH: 955px; BACKGROUND-REPEAT: repeat-x; FLOAT: left; HEIGHT: 128px
+}
+.foot3 .foot3_con {
+	TEXT-INDENT: 19px; MARGIN: 9px 15px; WIDTH: 135px; FLOAT: left; HEIGHT: 110px
+}
+.foot3 .foot3_block {
+	WIDTH: 40px; FLOAT: left; HEIGHT: 128px
+}
+.foot3 .foot3_con LI {
+	BACKGROUND-IMAGE: url("../images/dian.jpg"/*tpa=http://www.320go.com/images/dian.jpg*/); TEXT-INDENT: 30px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 20px 6px
+}
+.foot3 .foot3_line {
+	BACKGROUND-IMAGE: url("../images/helf_line.jpg"/*tpa=http://www.320go.com/images/helf_line.jpg*/); MARGIN-TOP: 4px; WIDTH: 4px; BACKGROUND-REPEAT: no-repeat; FLOAT: left; HEIGHT: 119px
+}
+.link_title {
+	BACKGROUND-IMAGE: url("../images/link.gif"/*tpa=http://www.320go.com/images/link.gif*/); LINE-HEIGHT: 30px; PADDING-LEFT: 20px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 3px 8px; HEIGHT: 30px
+}
+.link_img {
+	PADDING-LEFT: 80px; HEIGHT: 35px
+}
+.link_img LI {
+	WIDTH: 85px; FLOAT: left; HEIGHT: 35px; MARGIN-LEFT: 20px
+}
+.link_foot {
+	BORDER-BOTTOM: #ccc 1px solid
+}
+#copyright {
+	HEIGHT: 60px
+}
+#copyright .copyright_logo {
+	WIDTH: 333px; FLOAT: left; HEIGHT: 50px; MARGIN-RIGHT: 10px
+}
+#copyright .copyright_line {
+	BACKGROUND-IMAGE: url("../images/copyline.gif"/*tpa=http://www.320go.com/images/copyline.gif*/); WIDTH: 1px; BACKGROUND-REPEAT: no-repeat; FLOAT: left; HEIGHT: 50px; MARGIN-RIGHT: 10px
+}
+#copyright .copyright_con {
+	MARGIN-TOP: 5px
+}
