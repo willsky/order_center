@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0030)http://kodtka.com/huayi/js.htm -->
+<HTML><HEAD><TITLE>JavaScript 时间显示</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META http-equiv=Content-Language content=zh-cn>
+<META content="MSHTML 6.00.2900.6169" name=GENERATOR></HEAD>
+<BODY bgColor=#ff0000>
+<P align=center><SPAN id=localtime 
+style="BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; FONT-WEIGHT: bold; FONT-SIZE: 24px; BORDER-LEFT: black 0px solid; COLOR: #ffff00; BORDER-BOTTOM: black 0px solid; BACKGROUND-COLOR: #ff0000"></SPAN></P>
+<SCRIPT type=text/javascript>
+function showLocale(objD)
+{
+ var str,colorhead,colorfoot;
+ var yy = objD.getYear();
+ if(yy<1900) yy = yy+1900;
+ var MM = objD.getMonth()+1;
+ if(MM<10) MM = MM;
+ var dd3 = objD.getDate();
+ if(dd<10) dd3 = dd3;
+ var dd = objD.getDate()-0;
+ if(dd<10) dd = dd;
+ 
+ var dd1 = objD.getDate()-3;
+ if(dd<10) dd1 = dd1;
+ 
+ var dd2 = objD.getDate()-dd;
+ if(dd<10) dd2 = dd2;
+ 
+ var hh = objD.getHours();
+ if(hh<10) hh = hh;
+ 
+ var hh1 = 23-objD.getHours();
+ if(hh<10) hh1 = hh1;
+ 
+ var mm = objD.getMinutes();
+ if(mm<10) mm = '0' + mm;
+ 
+ var mm1 = 59-objD.getMinutes();
+ if(mm<10) mm1 = mm1;
+ 
+ 
+ var ss = objD.getSeconds();
+ if(ss<10) ss = '0' + ss;
+ 
+ var ss1 = 59-objD.getSeconds();
+ if(ss<10) ss1 = ss1;
+ 
+ 
+	str = yy + "年" + MM + "月" + dd1 + "—" +  dd3 + "日限时秒杀299元，离恢复原价680元剩：" + dd2 + "天"  + hh1 + "时" +  mm1 + "分" + ss1 + "秒" ;
+ return(str);
+}
+
+function tick()
+{
+ var today;
+ today = new Date();
+ document.getElementById("localtime").innerHTML = showLocale(today);
+ window.setTimeout("tick()", 1000);
+}
+tick();
+</SCRIPT>
+</BODY></HTML>

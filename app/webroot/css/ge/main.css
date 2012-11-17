@@ -1,6 +1,6 @@
 body {
-    background-color: #421300;
-    margin: 0px auto;
+    background-color: #333;
+    margin: 0px auto 60px;
     padding: 0px;
     font-family: 微软雅黑,黑体, 宋体;
     font-size: 18px;
@@ -9,6 +9,7 @@ body {
 
 a{text-decoration:none; border:0px; color:#000;}
 img {border:0px;}
+p {text-indent:30px;}
 
 .red {color:red;}
 .default { color:#960; }
@@ -50,113 +51,29 @@ img {border:0px;}
 .clearfix { height:0px; _height:0px; *height:0px; +height:0px; clear: both; }
 
 .main{
-    width: 1050px;
+    width: 960px;
     margin: 0px auto;
-}
-
-.content {
-    width: 971px;
-    margin: 10px auto;
-    height: 100%;
-}
-
-ul.nav {
-    margin:5px auto;
-    padding: 0px;
-    height: 50px;
-    line-height: 50px;
-    width: 100%;
-    background-image: url(/img/ge/nav_background.jpg);
-    background-repeat: repeat-x;
-}
-
-ul.nav li {
-    list-style-type: none;
-    width:120px;
-    font-size: 20px;
-    float:left;
-    font-weight: 600;
-    color: #333;
-    text-align: center;
-    border-left:2px solid #666;
-}
-
-ul.nav li:first-child { border-left:0px;}
-
-.content .header, .content .body, .content .footer {
-    margin: 0px auto;
-    padding: 0px;
-}
-
-.content .header{
-    background-image: url(/img/ge/index_10.gif);
-    background-repeat: no-repeat;
-    height: 24px;
-}
-
-.content .body{
-    background-image: url(/img/ge/index_11.jpg);
-    background-repeat: repeat-y;
-    background-color: #F9F4C5;
-    height: 100%;
-    width: 100%;
+    background-color:#fff;
     display: table;
-    padding: 20px 0px 30px;
 }
 
-.content .footer{
-    background-image: url(/img/ge/index_13.gif);
-    background-repeat: no-repeat;
-    height: 23px;
-}
+.title { height:60px; line-height:60px; background-color:#666; color:#fff; text-indent:60px; margin: 20px auto; font-size:24px; font-weight:700; }
 
-.body dt {margin:20px 160px 0px; padding:0px; color:red; font-size:20px; font-weight:700;}
-.body dd {margin:5px 160px 0px; padding:0px;}
-.body dl {margin: 0px auto;}
+.body {font-size:14px; line-height:25px; margin: 20px 80px;}
+.body dt {margin:10px 30px 0px; padding:0px; color:red; font-size:16px; font-weight:500;}
+.body dd {margin:0px 30px 0px; padding:0px; font-size:15px; color:#000; font-weight:300;}
+.body dl {margin: 10px 0px 20px; auto; color:red; font-size:18px; font-weight:700;}
 
-.body table {
-    width:100%;
-    border: 0px;
-    border-spacing: 0px;
-}
+.custom { border: 1px dashed #ccc; display: table; width:100%; font-size: 15px; padding: 5px; margin:10px auto;}
+.left { float: left; margin-right:10px;}
+.custom p { margin:8px;}
 
-.body table td {border-top: 2px solid green; vertical-align:top; font-size:15px; padding: 2px 10px 20px; color:#960;}
-.body table td:first-child { width: 160px; padding:2px 0px 20px; vertical-align: middle;}
-.body table td:first-child img { width: 160px; height: 235px;}
-
-table.table_detail {
-    border: 0px;
-    background-color: orange;
-    border-spacing: 1px;
-}
-
-table.table_detail td {
-    border: 0px;
-    margin: 0px;
-    padding: 5px!important;
-    background-color: #fff;
-    width: 50%;
-}
-table.table_detail .vertical_center { vertical-align:middle; }
-
-.table_detail dt { font-size:18px; color:#960;  font-weight: 600; text-align: left; margin: 10px 5px;}
-.table_detail dd { font-size:17px; color:orange;  font-weight: 500; text-align: left; margin: 5px 20px;}
-
-.order {
-    background-color: white;
-    font-size:12px!important;
-}
-
-.order td{ border:0px!important; font-size:13px!important; padding-bottom:0px!important;}
-
-.order table{border-spacing:2px!important;}
-
-.order .head {
-    background-color: red;
-    color: white;
-    font-size:22px;
-    text-align: center;
-    height:40px;
-    line-height:40px;
-    font-weight: 700;
-}
+.dvd_content {margin: 20px auto; }
+.dvd_content ul, .dvd_content .li { margin:0px; padding:0px; }
+.dvd_content ul { padding:20px; 0px; color:red; font-size:20px; font-weight: 500;}
+.dvd_content li { text-indent:30px; list-style-type: none; color:black; font-size:18px; font-weight: 300; line-height:30px;}
+.wenti{font-size:12px; display:table; width:700px; margin:20px auto;}
+.wenti ul{margin:0px; padding:0px;}
+.wenti li{width:320px; color:#000; height:110px; float:left; margin:10px 15px; display:inline;}
+.wt_title{color:#F30; font-size:14px; line-height:25px;}
+.endpic span{margin: 5px;}
