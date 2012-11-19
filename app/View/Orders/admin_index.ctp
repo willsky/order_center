@@ -57,7 +57,7 @@ $(function(){
             onAfterEdit: function(e) {
                 var _field = e.column.name;
                 var _value = e.value|0;
-                var _id = e.record.id | 0;
+                var _id = e.record.id;
 
                 $.post('/admin/orders/edit/'+ _id, {field:_field, value:_value}, function(_callback){
                     var _status = _callback.code|0;
