@@ -3,12 +3,6 @@
 <script type="text/javascript">
 var manager = null, grid_table = null, user_win= null;
 
-function strftime( timestamp ) {
-    var data_obj = new Date(timestamp);
-    console.log(data_obj.getFullYear());
-    return data_obj.getFullYear();
-}
-
 $(function(){
     _grid_init = {
         columns: [
@@ -19,12 +13,24 @@ $(function(){
             { display: '客户邮件/QQ', name: 'customer_email', type: 'text', isSort:false, minWidth:150, align:'left'},
             { display: '客户邮编', name: 'customer_postal', type: 'text', isSort:false, minWidth:80, align:'center'},
             { display: '客户地址', name: 'customer_address', type: 'text', isSort:false, minWidth:200, align:'center'},
-            { display: '订单状态', name: 'state', type: 'text', isSort:false, minWidth:80, align:'center'},
+            { display: '订单状态', name: 'state', type: 'text', isSort:false, minWidth:80, align:'center', 
+            render:function(_row, _index){
+                return top.order_state(_row.state);
+            }},
             { display: '物流', name: 'transport', type: 'text', isSort:false, minWidth:100, align:'center'},
-            { display: '支付方式', name: 'payment', type: 'text', isSort:false, minWidth:100, align:'center'},
+            { display: '支付方式', name: 'payment', type: 'text', isSort:false, minWidth:100, align:'center',
+              render: function(_row, _index) {
+                  return top.pay_state(_row.payment);
+            }},
             { display: '发货人', name: 'sender', type: 'text', isSort:false, minWidth:100, align:'center'},
-            { display: '创建时间', name: 'created', type: 'text', isSort:false, minWidth:100, align:'center'},
-            { display: '发货时间', name: 'updated', type: 'text', isSort:false, minWidth:100, align:'center'}
+            { display: '创建时间', name: 'created', type: 'text', isSort:true, minWidth:160, align:'center', 
+              render:function(_row, _index){
+                  return top.strftime(_row.created);
+            }},
+            { display: '发货时间', name: 'updated', type: 'text', isSort:true, minWidth:100, align:'center', 
+              render:function(_row, _index){
+                  return top.strftime(_row.updated);
+            }}
             ],
             enabledEdit: true,  
             enabledSort: true,

@@ -59,7 +59,7 @@ class OrdersController extends AppController {
                     break;
                 }
 
-                if ( !Validation::phone($_telephone) ) {
+                if ( !Validation::notEmpty($_telephone) ) {
                     $_code = 2001;
                     break;
                 }
@@ -69,10 +69,10 @@ class OrdersController extends AppController {
                     break;
                 }
 
-                if ( !Validation::postal($_postal, '/^[0-9]{6}$/') ) {
-                    $_code = 2003;
-                    break;
-                }
+                //if ( !Validation::postal($_postal, '/^[0-9]{6}$/') ) {
+                    //$_code = 2003;
+                    //break;
+                //}
 
                 $_source_ip = $this->request->clientIp();
 
@@ -158,11 +158,11 @@ class OrdersController extends AppController {
 
                 if ( !Validation::notEmpty($_name) ) break;
 
-                if ( !Validation::phone($_telephone) ) break;
+                if ( !Validation::notEmpty($_telephone) ) break;
 
                 if ( !Validation::email($_email) && !Validation::custom($_email, '/^[0-9]{5,11}$/') ) break;
 
-                if ( !Validation::postal($_postal, '/^[0-9]{6}$/') ) break;
+                //if ( !Validation::postal($_postal, '/^[0-9]{6}$/') ) break;
 
                 if ( !Validation::notEmpty($_address) ) break;
 

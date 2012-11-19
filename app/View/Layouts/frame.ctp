@@ -79,7 +79,7 @@
 	<div style="display:none"><?php echo $this->element('sql_dump'); ?></div>
 </body>
 <?php
-	echo $this->Html->script(array('lib/jquery/jquery-1.5.2.min', 'lib/ligerUI/js/ligerui.min', 'menu_data'));
+    echo $this->Html->script(array('lib/jquery/jquery-1.5.2.min', 'lib/ligerUI/js/ligerui.min', 'menu_data', 'utilty'));
 ?>
 <script type="text/javascript">
 var tab = null;
