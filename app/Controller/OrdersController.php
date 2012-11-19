@@ -211,7 +211,7 @@ class OrdersController extends AppController {
             $_params = $this->request->data;
             $_sort = isset($_params['sort']) ? trim($_params['sort']) : 'id';
             $_order = isset($_params['order']) ? trim(strtolower($_params['order'])) : 'desc';
-            $_sort_fields = array('id', 'product_name', 'created', 'updated');
+            $_sort_fields = array('id', 'product_name', 'state', 'ts_id',  'created', 'updated');
 
             if ( !in_array($_sort, $_sort_fields) ) $_sort = 'id';
             if ( !in_array($_order, array('desc', 'asc')) ) $_order = 'desc';

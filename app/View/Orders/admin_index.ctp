@@ -15,12 +15,12 @@ $(function(){
             { display: '客户邮件/QQ', name: 'customer_email', type: 'text', isSort:false, minWidth:150, align:'left'},
             { display: '客户邮编', name: 'customer_postal', type: 'text', isSort:false, minWidth:80, align:'center'},
             { display: '客户地址', name: 'customer_address', type: 'text', isSort:false, minWidth:200, align:'center'},
-            { display: '订单状态', name: 'state', type: 'text', isSort:false, minWidth:80, align:'center', 
+            { display: '订单状态', name: 'state', type: 'text', isSort:true, minWidth:80, align:'center', 
             render:function(_row, _index){
                 return top.order_state(_row.state);
             }, editor:{type:'select', data: order_states, valueColumnName: 'state'}
             },
-            { display: '物流', name: 'ts_id', type: 'text', isSort:false, minWidth:100, align:'center', 
+            { display: '物流', name: 'ts_id', type: 'text', isSort:true, minWidth:100, align:'center', 
               render:function(_row, _index){
                 return top.transport(_row.ts_id);
               }, editor: { type:'select', data: transports, valueColumnName: 'ts_id'}
