@@ -279,6 +279,7 @@ class OrdersController extends AppController {
 
             if ( $this->Order->saveField($_field, $_value) ) {
                 $this->Order->saveField('send_id', $this->uid);
+                $this->Order->saveField('sended', time());
                 $this->json();
             } else $this->json(array(), 601); 
 
