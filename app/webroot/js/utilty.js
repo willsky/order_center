@@ -83,7 +83,7 @@ function getTransports(){
 }
 
 function getTransportList(){
-    var transports= [{order:0, text:'未发货'},
+    var transports= [{ts_id:0, text:'未发货'},
                   {ts_id:1, text:'EMS'},
                   {ts_id:2, text:'顺风物流'}, 
                   {ts_id:3, text:'中通'},
