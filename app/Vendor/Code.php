@@ -40,6 +40,7 @@ class Code {
             2003 => __('Postal wrong'),
             2004 => __('Miss product id'),
             2005 => __('Address wrong'),
+            2006 => __('Order Not existed'),
         );
         return $_codes[$code];
     }

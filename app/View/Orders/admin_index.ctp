@@ -2,6 +2,8 @@
 
 <script type="text/javascript">
 var manager = null, grid_table = null, user_win= null;
+var order_states = top.getOrderState(); 
+var transports = top.getTransportList();
 
 $(function(){
     _grid_init = {
@@ -16,8 +18,14 @@ $(function(){
             { display: '订单状态', name: 'state', type: 'text', isSort:false, minWidth:80, align:'center', 
             render:function(_row, _index){
                 return top.order_state(_row.state);
-            }},
-            { display: '物流', name: 'transport', type: 'text', isSort:false, minWidth:100, align:'center'},
+            }, editor:{type:'select', data: order_states, valueColumnName: 'state'}
+            },
+            { display: '物流', name: 'ts_id', type: 'text', isSort:false, minWidth:100, align:'center', 
+              render:function(_row, _index){
+                return top.transport(_row.ts_id);
+              }, editor: { type:'select', data: transports, valueColumnName: 'ts_id'}
+            },
+            { display: '物流号', name: 'ts_no', type: 'text', isSort:false, minWidth:100, align:'center', editor:{type:'text'}},
             { display: '支付方式', name: 'payment', type: 'text', isSort:false, minWidth:100, align:'center',
               render: function(_row, _index) {
                   return top.pay_state(_row.payment);
@@ -37,7 +45,7 @@ $(function(){
             rownumbers:true,
             //checkbox: true,
             dataAction: 'server',
-            url: '/admin/orders',
+            url: '/admin/orders/index',
             method: 'post',
             pageSize: 20,
             height: '100%',
@@ -45,7 +53,17 @@ $(function(){
             root: 'data',
             record: 'total',
             sortnameParmName: 'sort',
-            sortorderParmName: 'order'
+            sortorderParmName: 'order',
+            onAfterEdit: function(e) {
+                var _field = e.column.name;
+                var _value = e.value|0;
+                var _id = e.record.id | 0;
+
+                $.post('/admin/orders/edit/'+ _id, {field:_field, value:_value}, function(_callback){
+                    var _status = _callback.code|0;
+                    grid_table.loadServerData();
+                });
+            } 
     };
 
     grid_table = manager = $("#maingrid").ligerGrid(_grid_init);

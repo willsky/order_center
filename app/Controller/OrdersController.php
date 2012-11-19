@@ -219,7 +219,21 @@ class OrdersController extends AppController {
             $_paginate = $this->paginate;
             $_paginate = array_merge($_paginate, array('order'=>array(sprintf('Order.%s', $_sort) => $_order)));
             $this->paginate = $_paginate;
-            $this->json(Set::extract($this->paginate(),'{n}.Order'), 0, array('total'=>$this->Order->find('count')));
+            $_order_list = Set::extract($this->paginate(),'{n}.Order');
+            
+            if ( count($_order_list) ) {
+                $this->loadModel('User');
+                foreach($_order_list as $_k=>$val) {
+                    $_uid = intval($val['send_id']);
+
+                    if ( $_uid ) {
+                        $this->User->id = $_uid;
+                        $_order_list[$_k]['sender'] = $this->User->field('name'); 
+                    }
+                }
+            }
+
+            $this->json($_order_list, 0, array('total'=>$this->Order->find('count')));
         } 
     }
 
@@ -247,20 +261,29 @@ class OrdersController extends AppController {
      * @return void
      */
     public function admin_edit($id = null) {
-        //$this->layout = 'default';
         $this->Order->id = $id;
+
         if (!$this->Order->exists()) {
-            throw new NotFoundException(__('Invalid order'));
+            $this->json(array(), 2006);
         }
-        if ($this->request->is('post') || $this->request->is('put')) {
-            if ($this->Order->save($this->request->data)) {
-                $this->Session->setFlash(__('The order has been saved'));
-                $this->redirect(array('action' => 'index'));
-            } else {
-                $this->Session->setFlash(__('The order could not be saved. Please, try again.'));
+
+        if ($this->request->is('post')) {
+            $_params = $this->request->data;
+            $this->params_verify(array('field', 'value'), $_params);
+            $_field = $_params['field'];
+            $_value = $_params['value'];
+
+            if ( !in_array($_field, array('state', 'ts_id', 'ts_no')) ) {
+                $this->json(array(), 406); 
             }
+
+            if ( $this->Order->saveField($_field, $_value) ) {
+                $this->Order->saveField('send_id', $this->uid);
+                $this->json();
+            } else $this->json(array(), 601); 
+
         } else {
-            $this->request->data = $this->Order->read(null, $id);
+            $this->json(array(), 406); 
         }
     }
 
