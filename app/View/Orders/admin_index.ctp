@@ -11,10 +11,10 @@ $(function(){
         columns: [
             { display: '订单号', name: 'id', width: 100, type: 'int', align:'left'},
             { display: '产品', name: 'product_name', type: 'text', align:'left', minWidth:100},
-            { display: '客户姓名', name: 'customer_realname', type: 'text', isSort:false, minWidth:80, align:'left'},
-            { display: '客户电话', name: 'customer_telephone', type: 'text', minWidth:100, align:'left'},
-            { display: '客户邮件/QQ', name: 'customer_email', type: 'text', isSort:false, minWidth:150, align:'left'},
-            { display: '客户邮编', name: 'customer_postal', type: 'text', isSort:false, minWidth:80, align:'center'},
+            { display: '客户姓名', name: 'customer_realname', type: 'text', isSort:false, minWidth:80, align:'left', editor:{type:'text'}},
+            { display: '客户电话', name: 'customer_telephone', type: 'text', minWidth:100, align:'left', editor:{type:'text'}},
+            { display: '客户邮件/QQ', name: 'customer_email', type: 'text', isSort:false, minWidth:150, align:'left', editor:{type:'text'}},
+            { display: '客户邮编', name: 'customer_postal', type: 'text', isSort:false, minWidth:80, align:'center', editor:{type:'text'}},
             { display: '客户地址', name: 'customer_address', type: 'text', isSort:false, minWidth:200, align:'center', editor:{type:'text'}},
             { display: '订单状态', name: 'state', type: 'text', isSort:true, minWidth:80, align:'center', 
             render:function(_row, _index){
