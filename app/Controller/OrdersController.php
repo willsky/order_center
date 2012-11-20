@@ -64,10 +64,10 @@ class OrdersController extends AppController {
                     break;
                 }
 
-                if ( !Validation::email($_email) && !Validation::custom($_email, '/^[0-9]{5,11}$/') ) {
-                    $_code = 2002;
-                    break;
-                }
+                //if ( !Validation::email($_email) && !Validation::custom($_email, '/^[0-9]{5,11}$/') ) {
+                    //$_code = 2002;
+                    //break;
+                //}
 
                 //if ( !Validation::postal($_postal, '/^[0-9]{6}$/') ) {
                     //$_code = 2003;
@@ -160,7 +160,7 @@ class OrdersController extends AppController {
 
                 if ( !Validation::notEmpty($_telephone) ) break;
 
-                if ( !Validation::email($_email) && !Validation::custom($_email, '/^[0-9]{5,11}$/') ) break;
+                //if ( !Validation::email($_email) && !Validation::custom($_email, '/^[0-9]{5,11}$/') ) break;
 
                 //if ( !Validation::postal($_postal, '/^[0-9]{6}$/') ) break;
 
