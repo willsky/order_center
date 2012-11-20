@@ -4,6 +4,7 @@
 var manager = null, grid_table = null, user_win= null;
 var order_states = top.getOrderState(); 
 var transports = top.getTransportList();
+var payments = top.getPayments();
 
 $(function(){
     _grid_init = {
@@ -29,7 +30,8 @@ $(function(){
             { display: '支付方式', name: 'payment', type: 'text', isSort:false, minWidth:100, align:'center',
               render: function(_row, _index) {
                   return top.pay_state(_row.payment);
-            }},
+              }, editor: {type: 'select', data:payments, valueColumnName:'payment'}
+            },
             { display: '发货人', name: 'sender', type: 'text', isSort:false, minWidth:100, align:'center'},
             { display: '创建时间', name: 'created', type: 'text', isSort:true, minWidth:160, align:'center', 
               render:function(_row, _index){

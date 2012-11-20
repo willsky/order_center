@@ -54,6 +54,7 @@ function getOrderState()
 
 function pay_state(state) {
     var _state_str = '未付款';
+    state = parseInt(state);
 
     do {
         switch(state) {
@@ -73,6 +74,7 @@ function pay_state(state) {
 }
 
 function transport(t_id) {
+    t_id = parseInt(t_id);
     var transports = getTransports();
     return transports[t_id];
 }
@@ -91,4 +93,15 @@ function getTransportList(){
                   {ts_id:5, text:'宅急送'},
                   {ts_id:6, text:'韵达快递'}];
     return transports;
+}
+
+function getPayments()
+{
+    var payments = new Array(
+            {payment:0, text:'未付款'},
+            {payment:1, text:'货到付款'},
+            {payment:2, text:'支付宝'}
+            );
+
+    return payments;
 }

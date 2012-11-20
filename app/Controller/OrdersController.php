@@ -273,7 +273,7 @@ class OrdersController extends AppController {
             $_field = $_params['field'];
             $_value = $_params['value'];
 
-            if ( !in_array($_field, array('state', 'ts_id', 'ts_no')) ) {
+            if ( !in_array($_field, array('state', 'ts_id', 'ts_no', 'payment')) ) {
                 $this->json(array(), 406); 
             }
 
