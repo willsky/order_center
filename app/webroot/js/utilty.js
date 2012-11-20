@@ -47,7 +47,7 @@ function getOrderState()
                   {state:3, text:'退货中'},
                   {state:4, text:'完成退货'},
                   {state:5, text:'交易完成'},
-                  {state:6, text:'作废'}];
+                  {state:10, text:'作废'}];
     return orders;
 }
 
