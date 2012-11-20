@@ -1,0 +1,120 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2012-11-20 09:52+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: /Code.php:18
+msgid "Success"
+msgstr "操作成功"
+
+#: /Code.php:19
+msgid "Miss paramter"
+msgstr "缺少参数"
+
+#: /Code.php:20
+msgid "No Auth"
+msgstr "认证失败"
+
+#: /Code.php:21
+msgid "Sign Fail"
+msgstr "签名失败"
+
+#: /Code.php:22
+msgid "Request deny"
+msgstr "请求被拒绝"
+
+#: /Code.php:23
+msgid "Not Found"
+msgstr "资源未被找到"
+
+#: /Code.php:24
+msgid "Request method error"
+msgstr "请求的方法不存在"
+
+#: /Code.php:25
+msgid "Bad Request"
+msgstr "错误请求"
+
+#: /Code.php:26
+msgid "Timeout"
+msgstr "请求超时"
+
+#: /Code.php:27
+msgid "Server Error"
+msgstr "服务器内部错误"
+
+#: /Code.php:28
+msgid "Request method not support"
+msgstr "请求方法不支持"
+
+#: /Code.php:29
+msgid "Paramter value error"
+msgstr "参数值错误"
+
+#: /Code.php:30
+msgid "Save fail"
+msgstr "保存失败"
+
+#: /Code.php:31
+msgid "Password error"
+msgstr "密码错误"
+
+#: /Code.php:32
+msgid "username is null"
+msgstr "没有输入用户名"
+
+#: /Code.php:33
+msgid "password is null"
+msgstr "没有输入密码"
+
+#: /Code.php:34
+msgid "Account not exist"
+msgstr "帐户不存在"
+
+#: /Code.php:35
+msgid "Account exist"
+msgstr "帐户已存在"
+
+#: /Code.php:36
+msgid "Can Not Delete admin"
+msgstr "admin帐户不可被删除"
+
+#: /Code.php:37
+msgid "Name can not empty"
+msgstr "名字不可以为空"
+
+#: /Code.php:38
+msgid "Telephone wrong"
+msgstr "电话号码错误"
+
+#: /Code.php:39
+msgid "Email wrong"
+msgstr "邮件地址错误"
+
+#: /Code.php:40
+msgid "Postal wrong"
+msgstr "邮政编码错误"
+
+#: /Code.php:41
+msgid "Miss product id"
+msgstr "缺少产品id"
+
+#: /Code.php:42
+msgid "Address wrong"
+msgstr "寄件地址错误"
+
+#: /Code.php:43
+msgid "Order Not existed"
+msgstr "订单不存在"
+
