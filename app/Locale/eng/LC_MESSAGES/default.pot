@@ -1,0 +1,120 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2012-11-20 09:52+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: /Code.php:18
+msgid "Success"
+msgstr ""
+
+#: /Code.php:19
+msgid "Miss paramter"
+msgstr ""
+
+#: /Code.php:20
+msgid "No Auth"
+msgstr ""
+
+#: /Code.php:21
+msgid "Sign Fail"
+msgstr ""
+
+#: /Code.php:22
+msgid "Request deny"
+msgstr ""
+
+#: /Code.php:23
+msgid "Not Found"
+msgstr ""
+
+#: /Code.php:24
+msgid "Request method error"
+msgstr ""
+
+#: /Code.php:25
+msgid "Bad Request"
+msgstr ""
+
+#: /Code.php:26
+msgid "Timeout"
+msgstr ""
+
+#: /Code.php:27
+msgid "Server Error"
+msgstr ""
+
+#: /Code.php:28
+msgid "Request method not support"
+msgstr ""
+
+#: /Code.php:29
+msgid "Paramter value error"
+msgstr ""
+
+#: /Code.php:30
+msgid "Save fail"
+msgstr ""
+
+#: /Code.php:31
+msgid "Password error"
+msgstr ""
+
+#: /Code.php:32
+msgid "username is null"
+msgstr ""
+
+#: /Code.php:33
+msgid "password is null"
+msgstr ""
+
+#: /Code.php:34
+msgid "Account not exist"
+msgstr ""
+
+#: /Code.php:35
+msgid "Account exist"
+msgstr ""
+
+#: /Code.php:36
+msgid "Can Not Delete admin"
+msgstr ""
+
+#: /Code.php:37
+msgid "Name can not empty"
+msgstr ""
+
+#: /Code.php:38
+msgid "Telephone wrong"
+msgstr ""
+
+#: /Code.php:39
+msgid "Email wrong"
+msgstr ""
+
+#: /Code.php:40
+msgid "Postal wrong"
+msgstr ""
+
+#: /Code.php:41
+msgid "Miss product id"
+msgstr ""
+
+#: /Code.php:42
+msgid "Address wrong"
+msgstr ""
+
+#: /Code.php:43
+msgid "Order Not existed"
+msgstr ""
+
