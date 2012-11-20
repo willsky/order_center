@@ -277,11 +277,24 @@ class OrdersController extends AppController {
                 $this->json(array(), 406); 
             }
 
-            if ( $this->Order->saveField($_field, $_value) ) {
-                $this->Order->saveField('send_id', $this->uid);
-                $this->Order->saveField('sended', time());
+            $_post_data = array(
+                'id'=>$id, 
+                'send_id'=>$this->uid,
+                'sended'=>time(),
+                $_field => $_value
+            );
+
+            // 单个处理，性能差，要进行三次sql处理
+            //if ( $this->Order->saveField($_field, $_value) ) {
+                //$this->Order->saveField('send_id', $this->uid);
+                //$this->Order->saveField('sended', time());
+                //$this->json();
+            //} else $this->json(array(), 601); 
+
+            if ($result = $this->Order->save($_post_data)) {
+                var_dump($result); exit;
                 $this->json();
-            } else $this->json(array(), 601); 
+            } else $this->json(array(), 601);
 
         } else {
             $this->json(array(), 406); 
