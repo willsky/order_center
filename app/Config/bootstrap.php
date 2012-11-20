@@ -187,3 +187,5 @@ Configure::write('Server.order_api', 'http://dev.order.center.com/orders/add');
 // 密码混淆
 Configure::write('Password.salt', 'order_center');
 
+// 使用中文
+Configure::write("Config.language", 'chi');
