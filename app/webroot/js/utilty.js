@@ -12,7 +12,7 @@ function order_state (status) {
     do {
         switch (status) {
             case 0:
-                _str_state = '未处理';
+                _str_state = '<font color="red">未处理</font>';
                 break;
             case 1:
                 _str_state = '已发货';
@@ -27,10 +27,10 @@ function order_state (status) {
                 _str_state = '完成退货';
                 break;
             case 5:
-                _str_state = '交易完成';
+                _str_state = '<font color="green">交易完成</font>';
                 break;
             case 10:
-                _str_state = '作废';
+                _str_state = '<font color="#CCC">作废</font>';
                 break;
         }
 
