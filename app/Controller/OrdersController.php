@@ -212,12 +212,24 @@ class OrdersController extends AppController {
             $_sort = isset($_params['sort']) ? trim($_params['sort']) : 'id';
             $_order = isset($_params['order']) ? trim(strtolower($_params['order'])) : 'desc';
             $_sort_fields = array('id', 'product_name', 'state', 'ts_id',  'created', 'updated');
+            $_offset = isset($_params['page']) ? intval($_params['page']) : 1;
+            $_limit = isset($_params['limit']) ? intval($_params['limit']) : 20;
+
+            if ( $_offset < 1) $_offset = 1;
+
+            if ( $_limit < 1 ) $_limit = 10;
+
+            $_offset = ($_offset - 1) * $_limit;
 
             if ( !in_array($_sort, $_sort_fields) ) $_sort = 'id';
             if ( !in_array($_order, array('desc', 'asc')) ) $_order = 'desc';
 
             $_paginate = $this->paginate;
-            $_paginate = array_merge($_paginate, array('order'=>array(sprintf('Order.%s', $_sort) => $_order)));
+            $_paginate = array_merge($_paginate, array(
+                'order'=>array(sprintf('Order.%s', $_sort) => $_order)
+                'offset' => $_offset,
+                'limit' => $_limit
+            ));
             $this->paginate = $_paginate;
             $_order_list = Set::extract($this->paginate(),'{n}.Order');
             
