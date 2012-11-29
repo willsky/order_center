@@ -226,7 +226,7 @@ class OrdersController extends AppController {
 
             $_paginate = $this->paginate;
             $_paginate = array_merge($_paginate, array(
-                'order'=>array(sprintf('Order.%s', $_sort) => $_order)
+                'order'=>array(sprintf('Order.%s', $_sort) => $_order),
                 'offset' => $_offset,
                 'limit' => $_limit
             ));
