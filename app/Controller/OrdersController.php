@@ -74,7 +74,7 @@ class OrdersController extends AppController {
                     //break;
                 //}
 
-                $_source_ip = $this->request->clientIp();
+                $_source_ip = $this->request->clientIp(false);
 
                 $_key = Configure::read("Server.secure");
                 $_order_api = Configure::read('Server.order_api');
