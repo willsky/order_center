@@ -27,13 +27,9 @@ $(function(){
               }, editor: { type:'select', data: transports, valueColumnName: 'ts_id'}
             },
             { display: '物流号', name: 'ts_no', type: 'text', isSort:false, minWidth:100, align:'center', editor:{type:'text'}},
-            { display: '支付方式', name: 'payment', type: 'text', isSort:false, minWidth:100, align:'center',
-              render: function(_row, _index) {
-                  return top.pay_state(_row.payment);
-              }, editor: {type: 'select', data:payments, valueColumnName:'payment'}
-            },
+            { display: '客户IP', name: 'customer_ip', type: 'text', isSort:false, minWidth:160, align:'center'},
             { display: '发货人', name: 'sender', type: 'text', isSort:false, minWidth:100, align:'center'},
-            { display: '创建时间', name: 'created', type: 'text', isSort:true, minWidth:160, align:'center', 
+            { display: '下单时间', name: 'created', type: 'text', isSort:true, minWidth:160, align:'center', 
               render:function(_row, _index){
                   return top.strftime(_row.created);
             }},
