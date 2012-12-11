@@ -214,8 +214,8 @@ class OrdersController extends AppController {
             $_sort_fields = array('id', 'product_name', 'state', 'ts_id',  'created', 'updated');
             $_offset = isset($_params['page']) ? intval($_params['page']) : 1;
             $_limit = isset($_params['limit']) ? intval($_params['limit']) : 20;
-            $_query = isset($_params['query']) ? intval($_params['query']) : array();
-            var_dump($_query); exit;
+            $_query = isset($_params['query']) ? trim($_params['query']) : array();
+            $_query = $this->parserQuery($_query);
 
             if ( $_offset < 1) $_offset = 1;
 
@@ -233,7 +233,13 @@ class OrdersController extends AppController {
                 'limit' => $_limit
             ));
             $this->paginate = $_paginate;
-            $_order_list = Set::extract($this->paginate(),'{n}.Order');
+            $_conditions = array();
+
+            foreach($_query as $_key=>$_val) {
+                $_conditions['Order.' . $_key] = $_val;
+            }
+
+            $_order_list = Set::extract($this->paginate('Order', $_conditions),'{n}.Order');
             
             if ( count($_order_list) ) {
                 $this->loadModel('User');

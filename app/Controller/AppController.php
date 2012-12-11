@@ -173,4 +173,25 @@ class AppController extends Controller {
             }
         }
     }
+
+    protected function parserQuery($query)
+    {
+        $_query = array();
+
+        $_params = explode('|', $query);
+
+        foreach($_params as $_param) {
+            $_item = explode(':', $_param);
+
+            if ( 2 != count($_item) ) {
+                continue;
+            }
+            list($_key, $_value) = $_item;
+
+            $_query[$_key] = $_value;
+        }
+
+        return $_query;
+    }
 }
+
