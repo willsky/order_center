@@ -1,3 +1,15 @@
+<div style="margin: 0px 0px 10px 0px;">
+    <table>
+        <tr>
+            <td>订单状态：</td>
+            <td><input type="text" id="txt_order_states" /><input type="hidden" id="val_order_states" /></td>
+            <td>物流方式：</td>
+            <td><input type="text" id="txt_transport" /><input type="hidden" id="val_transport" /></td>
+            <td width="10"></td>
+            <td><div id="search"></div></td>
+        </tr>
+    </table>
+</div>
 <div id="maingrid"></div>
 
 <script type="text/javascript">
@@ -5,6 +17,7 @@ var manager = null, grid_table = null, user_win= null;
 var order_states = top.getOrderState(); 
 var transports = top.getTransportList();
 var payments = top.getPayments();
+var sel_order_state = null, sel_transport = null;
 
 $(function(){
     _grid_init = {
@@ -63,6 +76,56 @@ $(function(){
                 });
             } 
     };
+
+    var query_order_states = order_states, query_transports = transports;
+    query_order_states.unshift({'state': '', 'text':'所有'});
+    query_transports.unshift({'ts_id': '', 'text': '所有'});
+
+    sel_order_state = $("#txt_order_states").ligerComboBox({
+        data: query_order_states,
+        valueFieldID: 'val_order_states',
+        valueField: 'state'
+    });
+
+    sel_transport = $("#txt_transport").ligerComboBox({
+        data: query_transports,
+        valueFieldID: 'val_transport',
+        valueField: 'ts_id'
+    });
+
+    $("#search").ligerButton({
+        text: '搜索',
+        click: function(){
+            var s_ts_id = null, s_state = null, query = {}, has_query=false;
+
+            if ( sel_transport ) {
+                s_ts_id = $("#val_transport").val();
+
+                if ( '' != s_ts_id ) {
+                    s_ts_id = s_ts_id | 0;
+                    query.ts_id = s_ts_id;
+                    has_query = true;
+                }
+            }
+
+            if ( sel_order_state ) {
+                s_state = $("#val_order_states").val();
+
+                if ( '' != s_state ) {
+                    s_state = s_state | 0;
+                    query.state = s_state;
+                    has_query = true;
+                }
+            }
+
+            if ( has_query ) { 
+                grid_table.setOptions({
+                    parms: [{name: 'query', value: query}]
+                });
+                grid_table.loadData(true);
+            }
+        }
+    });
 
     grid_table = manager = $("#maingrid").ligerGrid(_grid_init);
 });

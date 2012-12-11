@@ -214,6 +214,8 @@ class OrdersController extends AppController {
             $_sort_fields = array('id', 'product_name', 'state', 'ts_id',  'created', 'updated');
             $_offset = isset($_params['page']) ? intval($_params['page']) : 1;
             $_limit = isset($_params['limit']) ? intval($_params['limit']) : 20;
+            $_query = isset($_params['query']) ? intval($_params['query']) : array();
+            var_dump($_query); exit;
 
             if ( $_offset < 1) $_offset = 1;
 

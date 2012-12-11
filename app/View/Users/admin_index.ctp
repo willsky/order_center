@@ -34,7 +34,7 @@ $(function(){
             { display: '名字', name: 'name', type: 'text', align:'center', minWidth:150, width:150},
             { display: '昵称', name: 'nickname', type: 'text', isSort:false, minWidth:150, align:'center', editor:{type:'text'}},
             { display: '操作人', name: 'operate', type: 'text', minWidth:100, align:'center'},
-            { display: '创建时间', name:'created', type: 'text', width:150, isSort: false, align:'center'}
+            { display: '创建时间', name:'created', type: 'text', width:150, isSort: false, align:'center', render: function(_row, _index){ return top.strftime(_row.created);}}
             ],
             enabledEdit: true,  
             enabledSort: true,
