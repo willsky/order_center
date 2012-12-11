@@ -253,7 +253,7 @@ class OrdersController extends AppController {
                 }
             }
 
-            $this->json($_order_list, 0, array('total'=>$this->Order->find('count')));
+            $this->json($_order_list, 0, array('total'=>$this->Order->find('count', array('conditions'=>$_conditions))));
         } 
     }
 
