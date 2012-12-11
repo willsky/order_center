@@ -96,7 +96,7 @@ $(function(){
     $("#search").ligerButton({
         text: '搜索',
         click: function(){
-            var s_ts_id = null, s_state = null, query = '', has_query=false;
+            var s_ts_id = null, s_state = null, query = '';
 
             if ( sel_transport ) {
                 s_ts_id = $("#val_transport").val();
@@ -104,7 +104,6 @@ $(function(){
                 if ( '' != s_ts_id ) {
                     s_ts_id = s_ts_id | 0;
                     query = "ts_id:" + s_ts_id;
-                    has_query = true;
                 }
             }
 
@@ -119,16 +118,13 @@ $(function(){
                         _join = "|";
                     }
                     query += _join + "state:" + s_state;
-                    has_query = true;
                 }
             }
 
-            if ( has_query ) { 
-                grid_table.setOptions({
-                    parms: [{name: 'query', value: query}]
-                });
-                grid_table.loadData(true);
-            }
+            grid_table.setOptions({
+                parms: [{name: 'query', value: query}]
+            });
+            grid_table.loadData(true);
         }
     });
 
